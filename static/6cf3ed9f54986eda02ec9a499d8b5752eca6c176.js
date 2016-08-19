@@ -130,7 +130,7 @@ $(document).ready(function() {
         .show();
 
       $.ajax({
-        url: '/static/mail.php',
+        url: '/static/php/mail.php',
         type: 'POST',
         data: $form.serialize(),
         dataType: 'json',
