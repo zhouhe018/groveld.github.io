@@ -4,26 +4,13 @@
   <title>Martin Groeneveld</title>
   <link href="https://www.groveld.com/atom.xml" rel="self">
   <link href="https://www.groveld.com">
-  <updated>2016-12-11T22:36:34+00:00</updated>
+  <updated>2016-12-12T09:31:45+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>groveld</name>
     <email>groveld@gmail.com</email>
   </author>
   <rights>Copyright (c) 2016, Martin Groeneveld</rights>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/dit-is-een-test/</id>
-    <link href="https://www.groveld.com/articles/dit-is-een-test/">
-    <title>Dit is een Test!</title>
-    <author>
-      <name>groveld</name>
-      <email>groveld@gmail.com</email>
-    </author>
-    <published>2016-10-24T00:00:00+00:00</published>
-    <updated>2016-10-24T00:00:00+00:00</updated>
-    <content type="description">It has been a long time since my last post – I’m sorry for that but I didn’t have the time. Anyway I just installed TeamSpeak 3 on a Ubuntu 10.04 for a friend and want to share that info. Getting TeamSpeak running is mostly not the problem but you don’t want to start it after every boot by hand or run it as root. This Howto shows what I did. I assume that all user actions shown in this howto are performed as root or after executing sudo bash.</content>
-  </entry>
   
   <entry>
     <id>https://www.groveld.com/articles/htaccess-snippets/</id>
