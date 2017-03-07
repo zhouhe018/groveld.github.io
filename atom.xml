@@ -4,7 +4,7 @@
   <title>Martin Groeneveld</title>
   <link href="https://www.groveld.com/atom.xml" rel="self"/>
   <link href="https://www.groveld.com"/>
-  <updated>2017-03-07T12:10:28+00:00</updated>
+  <updated>2017-03-07T12:20:45+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>groveld</name>
@@ -13,8 +13,8 @@
   <rights>Copyright (c) 2017, Martin Groeneveld</rights>
   
   <entry>
-    <id>https://www.groveld.com/articles/htaccess-snippets/</id>
-    <link href="https://www.groveld.com/articles/htaccess-snippets/"/>
+    <id>https://www.groveld.com/blog/htaccess-snippets/</id>
+    <link href="https://www.groveld.com/blog/htaccess-snippets/"/>
     <title>A collection of useful .htaccess snippets</title>
     <author>
       <name>groveld</name>
@@ -26,8 +26,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/www-non-www-redirection/</id>
-    <link href="https://www.groveld.com/articles/www-non-www-redirection/"/>
+    <id>https://www.groveld.com/blog/www-non-www-redirection/</id>
+    <link href="https://www.groveld.com/blog/www-non-www-redirection/"/>
     <title>Nginx config for www and non-www redirection</title>
     <author>
       <name>groveld</name>
@@ -39,8 +39,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www/</id>
-    <link href="https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www/"/>
+    <id>https://www.groveld.com/blog/give-user-permission-to-edit-and-add-files-in-var-www/</id>
+    <link href="https://www.groveld.com/blog/give-user-permission-to-edit-and-add-files-in-var-www/"/>
     <title>Give user permission to edit and add files in /var/www</title>
     <author>
       <name>groveld</name>
@@ -52,8 +52,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server/</id>
-    <link href="https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server/"/>
+    <id>https://www.groveld.com/blog/use-gitolite-to-control-access-to-a-git-server/</id>
+    <link href="https://www.groveld.com/blog/use-gitolite-to-control-access-to-a-git-server/"/>
     <title>Use Gitolite to Control Access to a Git Server</title>
     <author>
       <name>groveld</name>
@@ -65,8 +65,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/open-hackerspaces-day-2014/</id>
-    <link href="https://www.groveld.com/articles/open-hackerspaces-day-2014/"/>
+    <id>https://www.groveld.com/blog/open-hackerspaces-day-2014/</id>
+    <link href="https://www.groveld.com/blog/open-hackerspaces-day-2014/"/>
     <title>March 29th marks this years International open Hackerspaces day</title>
     <author>
       <name>groveld</name>
@@ -78,8 +78,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages/</id>
-    <link href="https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages/"/>
+    <id>https://www.groveld.com/blog/how-to-use-gpg-to-encrypt-and-sign-messages/</id>
+    <link href="https://www.groveld.com/blog/how-to-use-gpg-to-encrypt-and-sign-messages/"/>
     <title>How To Use GPG to Encrypt and Sign Messages</title>
     <author>
       <name>groveld</name>
@@ -91,8 +91,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls/</id>
-    <link href="https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls/"/>
+    <id>https://www.groveld.com/blog/postfix-with-mysql-backend-and-tls/</id>
+    <link href="https://www.groveld.com/blog/postfix-with-mysql-backend-and-tls/"/>
     <title>Postfix with MySQL backend and TLS</title>
     <author>
       <name>groveld</name>
@@ -104,8 +104,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/clean-urls-with-jekyll-apache/</id>
-    <link href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache/"/>
+    <id>https://www.groveld.com/blog/clean-urls-with-jekyll-apache/</id>
+    <link href="https://www.groveld.com/blog/clean-urls-with-jekyll-apache/"/>
     <title>Clean URLs with Jekyll/Apache</title>
     <author>
       <name>groveld</name>
@@ -117,8 +117,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/what-it-really-means-to-hack/</id>
-    <link href="https://www.groveld.com/articles/what-it-really-means-to-hack/"/>
+    <id>https://www.groveld.com/blog/what-it-really-means-to-hack/</id>
+    <link href="https://www.groveld.com/blog/what-it-really-means-to-hack/"/>
     <title>What it really means to Hack</title>
     <author>
       <name>groveld</name>
@@ -130,8 +130,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/teamspeak-3-server-on-debian-ubuntu/</id>
-    <link href="https://www.groveld.com/articles/teamspeak-3-server-on-debian-ubuntu/"/>
+    <id>https://www.groveld.com/blog/teamspeak-3-server-on-debian-ubuntu/</id>
+    <link href="https://www.groveld.com/blog/teamspeak-3-server-on-debian-ubuntu/"/>
     <title>TeamSpeak 3 server on Debian/Ubuntu</title>
     <author>
       <name>groveld</name>
@@ -143,8 +143,8 @@
   </entry>
   
   <entry>
-    <id>https://www.groveld.com/articles/ohm2013-observe-hack-make/</id>
-    <link href="https://www.groveld.com/articles/ohm2013-observe-hack-make/"/>
+    <id>https://www.groveld.com/blog/ohm2013-observe-hack-make/</id>
+    <link href="https://www.groveld.com/blog/ohm2013-observe-hack-make/"/>
     <title>OHM2013. Observe, Hack, Make</title>
     <author>
       <name>groveld</name>
