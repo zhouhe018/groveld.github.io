@@ -48,7 +48,7 @@
 		}
 	],
 	"theme_color": "#000",
-	"start_url": "http://www.groveld.com",
+	"start_url": "https://www.groveld.com",
 	"display": "standalone",
   "orientation": "portrait"
 }
