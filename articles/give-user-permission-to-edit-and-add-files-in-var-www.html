@@ -20,8 +20,8 @@
 <meta name="description" content="The personal website of Martin Groeneveld">
 <meta name="author" content="groveld">
 <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="https://www.groveld.com/atom.xml">
-<link rel="canonical" href="https://www.groveld.com/">
-<title>Martin Groeneveld</title>
+<link rel="canonical" href="https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www">
+<title>Give user permission to edit and add files in /var/www - Martin Groeneveld</title>
 
 <!-- Bootstrap CSS, Custom CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -41,7 +41,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href="https://www.groveld.com/articles">Articles</a>
+        <a class="nav-item nav-link active" href="https://www.groveld.com/articles">Articles</a>
         <a class="nav-item nav-link" href="https://www.groveld.com/about">About</a>
         <a class="nav-item nav-link" href="https://www.groveld.com/contact">Contact</a>
       </div>
@@ -50,22 +50,79 @@
 </nav>
 
 
-    <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-
-      <div class="card my-3">
-        <div class="card-body">
-          <h1 class="card-title"></h1>
-          <p class="card-text my-0">
-            
-
-          </p>
-        </div>
+    <!-- Modal TOC -->
+<div class="modal fade" id="modalTOC" tabindex="-1" role="dialog" aria-labelledby="modalTOC" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Contents</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-
+      <div class="modal-body">
+        <a href="#configure-ssh-keys-for-git-administration" data-toggle="modal" data-target="#modalTOC">go-n-close</a>
+        
+      </div>
     </div>
   </div>
+</div>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+      <div class="card my-3">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTOC">
+            Content
+          </button>
+
+          <h1 class="card-title">Give user permission to edit and add files in /var/www</h1>
+          <p>Tutorial showing you how to give an Ubuntu user the right to edit and add files in the <code class="highlighter-rouge">/var/www</code> folders.</p>
+
+<p>Add the www-data group to an existing user</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-a</span> <span class="nt">-G</span> www-data username
+</code></pre></div></div>
+
+<p>OR if the user doesn’t exist: Create a new user and assign them the <code class="highlighter-rouge">www-data</code> group</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>adduser username www-data
+</code></pre></div></div>
+
+<p>Make sure all files are owned by the www-data group and user (cleans up the ownership)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown</span> <span class="nt">-R</span> www-data:www-data /var/www
+</code></pre></div></div>
+
+<p>Enable all members of the www-data group to read and write files</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> <span class="nt">-R</span> g+rw /var/www
+</code></pre></div></div>
+
+<p><strong>Note:</strong> You are done. But if you want all future files created in this directory to keep the current setup do the following as well:</p>
+
+<p>This is what I do to ensure that all files created keep the current user and permissions (it’s really lame to create new files, say from Git, and then have to update the user, groups and permissions of the new files every time to ensure they can be run by the server)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> <span class="nt">-R</span> g+rws /var/www
+</code></pre></div></div>
+
+<p><strong>Final Note:</strong> For security reasons it may be better to keep /var/www owned by root:root (depending on what you are doing)</p>
+
+<p>If you want to keep <code class="highlighter-rouge">/var/www</code> owned by root replace step 2 with</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chgrp</span> <span class="nt">-R</span> www-data /var/www/<span class="k">*</span>
+</code></pre></div></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
 </div>
 
 

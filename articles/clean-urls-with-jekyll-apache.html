@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta info -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="format-detection" content="telephone=no">
+
+<!-- favicon and webapp behaviour -->
+<link rel="manifest" href="https://www.groveld.com/manifest.json">
+<meta name="msapplication-config" content="https://www.groveld.com/msapplication.xml">
+<meta name="theme-color" content="#343a40">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Groveld">
+<link rel="shortcut icon" href="https://www.groveld.com/favicon.ico">
+<link rel="mask-icon" href="https://www.groveld.com/public/icons/safari-pinned-tab.svg" color="#343a40">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.groveld.com/public/icons/apple/apple-touch-icon.png">
+
+<!-- site info -->
+<meta name="description" content="The personal website of Martin Groeneveld">
+<meta name="author" content="groveld">
+<link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="https://www.groveld.com/atom.xml">
+<link rel="canonical" href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache">
+<title>Clean URLs with Jekyll/Apache - Martin Groeneveld</title>
+
+<!-- Bootstrap CSS, Custom CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.groveld.com/public/css/0f290ec2c6091cbb75ab5a1caba14cd7ff1dfbe4.css">
+
+  </head>
+  <body>
+    
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://www.groveld.com/">
+      <img src="https://www.groveld.com/public/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
+      Martin Groeneveld
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="https://www.groveld.com/articles">Articles</a>
+        <a class="nav-item nav-link" href="https://www.groveld.com/about">About</a>
+        <a class="nav-item nav-link" href="https://www.groveld.com/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- Modal TOC -->
+<div class="modal fade" id="modalTOC" tabindex="-1" role="dialog" aria-labelledby="modalTOC" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Contents</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <a href="#configure-ssh-keys-for-git-administration" data-toggle="modal" data-target="#modalTOC">go-n-close</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+      <div class="card my-3">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTOC">
+            Content
+          </button>
+
+          <h1 class="card-title">Clean URLs with Jekyll/Apache</h1>
+          <p>Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes <strong>not</strong> having a slash at the end of the urls. For example, <code class="highlighter-rouge">groveld.com/about</code>.</p>
+
+<p>To view options available when setting the permalink structure of posts in jekyll, you can take a look at the <a href="http://jekyllrb.com/docs/permalinks/">documentation</a>, but for our purpose, it’s so simple and you might have already guessed it without looking at the docs: <code class="highlighter-rouge">permalink: /:title</code></p>
+
+<p>You have to put the above line in the <code class="highlighter-rouge">_config.yml</code> file in the root directory of your jekyll project.</p>
+
+<p>If you have pagination, the permalink for the pagination could be as simple as <code class="highlighter-rouge">paginate_path: "page/:num"</code></p>
+
+<p>Now the tricky and more exciting part, which is telling apache to remove the trailing slashes! Here’s how I did it, with this htaccess configuartion:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Options -Multiviews +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+DirectorySlash Off
+
+# remove the trailing slash
+RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=301,L]
+
+# rewrite /dir/file to /dir/file/index.html
+RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
+</code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><strong>Disclaimer:</strong> By no means I'm an expert in writing .htaccess files! But, it's working as I expect it to do. Note that it also passes the queries (if there are any).</div>
+
+<p>We’re done! but there’s one more thing I’d like to mention:</p>
+
+<p>In this approach, jekyll creates a directory for each post, which in my opinion is not very nice. The solution for that will be to tell jekyll to create all posts as html files in some directory, like <code class="highlighter-rouge">blog</code> and then have Apache load the actual file for each post from the <code class="highlighter-rouge">blog</code> folder. However, if you try this, you’ll realize that jekyll always creates the paginations in folder structure (<code class="highlighter-rouge">/page/2/index.html</code>) and there’s no easy way to make it create html files (<code class="highlighter-rouge">/page/2.html</code>), and therefore that’ll messup our htaccess url rewrite. Now, if you have a decent knowledge of <a href="http://regex.learncodethehardway.org/">regex</a>, then you’re fine and you can separate blog posts from paginations, but that’s not the case for me :p, so this is as far as I will go.</p>
+
+<p>I also thought it might be useful to link to <a href="http://andrewho.co.uk/weblog/clean-urls-on-jekyll-apache">this article</a>; although I didn’t use it myself and I only found it after doing what I just described in this post.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>
+
+
+    <button type="button" class="btn btn-primary" id="scrollUp">Scroll to top</button>
+
+    <footer class="container-fluid my-3">
+      <div class="row">
+        <div class="col">
+          <div class="small text-center">
+            &copy; 2018 Martin Groeneveld &bull; <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a> &bull; <a href="/cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then custom scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.groveld.com/public/js/0f290ec2c6091cbb75ab5a1caba14cd7ff1dfbe4.js"></script>
+  </body>
+</html>
