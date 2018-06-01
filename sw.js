@@ -1,4 +1,4 @@
-const version = '20180601122020';
+const version = '20180601135213';
 const cacheName = `groveld-${version}`;
 const cacheFiles = [
   '/',
@@ -7,7 +7,8 @@ const cacheFiles = [
   '/public/css/main.css',
   '/public/images/logo.png',
   '/public/js/main.js',
-  '/public/manifest.json'
+  '/public/manifest.json',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
 ];
 
 self.addEventListener('install', event => {
