@@ -1,4 +1,4 @@
-const version = '20180601135213';
+const version = "7";
 const cacheName = `groveld-${version}`;
 const cacheFiles = [
   '/',
