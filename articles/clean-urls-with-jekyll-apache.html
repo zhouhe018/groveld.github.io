@@ -18,8 +18,8 @@
     <meta name="description" content="The personal website of Martin Groeneveld">
     <meta name="author" content="groveld">
     <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="/atom.xml">
-    <link rel="canonical" href="https://www.groveld.com/b/www-non-www-redirection">
-    <title>Nginx config for www and non-www redirection - Martin Groeneveld</title>
+    <link rel="canonical" href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache">
+    <title>Clean URLs with Jekyll/Apache - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/app.css">
@@ -57,20 +57,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <ul id="toc">
-  <li><a href="#redirect-non-www-to-www">Redirect non-www to WWW</a>
-    <ul>
-      <li><a href="#single-domain">Single domain</a></li>
-      <li><a href="#all-domains">All domains</a></li>
-    </ul>
-  </li>
-  <li><a href="#from-www-to-non-www">From WWW to non-WWW</a>
-    <ul>
-      <li><a href="#single-domain-1">Single domain</a></li>
-      <li><a href="#all-domains-1">All domains</a></li>
-    </ul>
-  </li>
-</ul>
+        
       </div>
     </div>
   </div>
@@ -87,44 +74,36 @@
             Content
           </button>
 
-          <h1 class="card-title">Nginx config for www and non-www redirection</h1>
-          <p>There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.</p>
+          <h1 class="card-title">Clean URLs with Jekyll/Apache</h1>
+          <p>Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes <strong>not</strong> having a slash at the end of the urls. For example, <code class="highlighter-rouge">groveld.com/about</code>.</p>
 
-<h2 id="redirect-non-www-to-www">Redirect non-www to WWW</h2>
+<p>To view options available when setting the permalink structure of posts in jekyll, you can take a look at the <a href="http://jekyllrb.com/docs/permalinks/">documentation</a>, but for our purpose, it’s so simple and you might have already guessed it without looking at the docs: <code class="highlighter-rouge">permalink: /:title</code></p>
 
-<h3 id="single-domain">Single domain</h3>
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
-  <span class="kn">server_name</span> <span class="s">example.com</span><span class="p">;</span>
-  <span class="kn">return</span> <span class="mi">301</span> <span class="nv">$scheme</span><span class="p">:</span><span class="n">//www.example.com</span><span class="nv">$request_uri</span><span class="p">;</span>
-<span class="p">}</span>
+<p>You have to put the above line in the <code class="highlighter-rouge">_config.yml</code> file in the root directory of your jekyll project.</p>
+
+<p>If you have pagination, the permalink for the pagination could be as simple as <code class="highlighter-rouge">paginate_path: "page/:num"</code></p>
+
+<p>Now the tricky and more exciting part, which is telling apache to remove the trailing slashes! Here’s how I did it, with this htaccess configuartion:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Options -Multiviews +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+DirectorySlash Off
+
+# remove the trailing slash
+RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=301,L]
+
+# rewrite /dir/file to /dir/file/index.html
+RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
 </code></pre></div></div>
 
-<h3 id="all-domains">All domains</h3>
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
-  <span class="kn">server_name</span> <span class="s">"~^(?!www</span><span class="err">\</span><span class="s">.).*"</span> <span class="p">;</span>
-  <span class="kn">return</span> <span class="mi">301</span> <span class="nv">$scheme</span><span class="p">:</span><span class="n">//www.</span><span class="nv">$host$request_uri</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="alert alert-warning" role="alert"><strong>Disclaimer:</strong> By no means I'm an expert in writing .htaccess files! But, it's working as I expect it to do. Note that it also passes the queries (if there are any).</div>
 
-<h2 id="from-www-to-non-www">From WWW to non-WWW</h2>
+<p>We’re done! but there’s one more thing I’d like to mention:</p>
 
-<h3 id="single-domain-1">Single domain</h3>
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
-  <span class="kn">server_name</span> <span class="s">www.example.com</span><span class="p">;</span>
-  <span class="kn">return</span> <span class="mi">301</span> <span class="nv">$scheme</span><span class="p">:</span><span class="n">//example.com</span><span class="nv">$request_uri</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>In this approach, jekyll creates a directory for each post, which in my opinion is not very nice. The solution for that will be to tell jekyll to create all posts as html files in some directory, like <code class="highlighter-rouge">blog</code> and then have Apache load the actual file for each post from the <code class="highlighter-rouge">blog</code> folder. However, if you try this, you’ll realize that jekyll always creates the paginations in folder structure (<code class="highlighter-rouge">/page/2/index.html</code>) and there’s no easy way to make it create html files (<code class="highlighter-rouge">/page/2.html</code>), and therefore that’ll messup our htaccess url rewrite. Now, if you have a decent knowledge of <a href="http://regex.learncodethehardway.org/">regex</a>, then you’re fine and you can separate blog posts from paginations, but that’s not the case for me :p, so this is as far as I will go.</p>
 
-<h3 id="all-domains-1">All domains</h3>
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
-  <span class="kn">server_name</span> <span class="s">"~^www</span><span class="err">\</span><span class="s">.(.*)</span>$<span class="s">"</span> <span class="p">;</span>
-  <span class="kn">return</span> <span class="mi">301</span> <span class="nv">$scheme</span><span class="p">:</span><span class="n">//</span><span class="nv">$1$request_uri</span> <span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>In both cases, for other-www, we create a altogether different server { } block. IMHO, this is cleanest and optimised way to handle www to non-www and non-www to www redirection.</p>
-
-<p>There are some WordPress plugins available there which can handle this at PHP-level. But for performance reason, always handle things in Nginx, that can be handled in Nginx alone!</p>
+<p>I also thought it might be useful to link to <a href="http://andrewho.co.uk/weblog/clean-urls-on-jekyll-apache">this article</a>; although I didn’t use it myself and I only found it after doing what I just described in this post.</p>
 
         </div>
       </div>
