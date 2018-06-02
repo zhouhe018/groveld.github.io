@@ -18,8 +18,8 @@
     <meta name="description" content="The personal website of Martin Groeneveld">
     <meta name="author" content="groveld">
     <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="/atom.xml">
-    <link rel="canonical" href="/articles/clean-urls-with-jekyll-apache">
-    <title>Clean URLs with Jekyll/Apache - Martin Groeneveld</title>
+    <link rel="canonical" href="/article/what-it-really-means-to-hack">
+    <title>What it really means to Hack - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/app.css">
@@ -37,7 +37,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="/blog">Articles</a>
+        <a class="nav-item nav-link active" href="/articles">Articles</a>
         <a class="nav-item nav-link" href="/about">About</a>
         <a class="nav-item nav-link" href="/contact">Contact</a>
       </div>
@@ -74,36 +74,40 @@
             Content
           </button>
 
-          <h1 class="card-title">Clean URLs with Jekyll/Apache</h1>
-          <p>Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes <strong>not</strong> having a slash at the end of the urls. For example, <code class="highlighter-rouge">groveld.com/about</code>.</p>
+          <h1 class="card-title">What it really means to Hack</h1>
+          <p>I once mentioned it to a classmate that I use GNU/Linux as the only Operating System at home, and he replied in shock, “That’s used by <em>Hackers</em>? Right?”
+That is true. Almost everyone who calls himself/herself a Hacker uses it, but the fear on his face suggested that he meant to say <em>Crackers</em>.
+Noooo! Linux users aren’t <em>Crackers</em>. That would be similar to saying that everyone who owns a slide hammer, is a car thief!</p>
 
-<p>To view options available when setting the permalink structure of posts in jekyll, you can take a look at the <a href="http://jekyllrb.com/docs/permalinks/">documentation</a>, but for our purpose, it’s so simple and you might have already guessed it without looking at the docs: <code class="highlighter-rouge">permalink: /:title</code></p>
+<p>Thinking out-of-the-box or using some tool in a way it isn’t meant to be used, just for fun and exploration can be called “hacking”.
+But try telling someone that you are a hacker, and they would look at you with surprise and suspicion.
+Because for them, hackers are those who seek for vulnerabilites and exploits in a computer system or a computer network. (whom I call <em>Crackers</em>)</p>
 
-<p>You have to put the above line in the <code class="highlighter-rouge">_config.yml</code> file in the root directory of your jekyll project.</p>
+<p>Hacking means exhibiting playful cleverness, which can be using an optical mouse as a barcode scanner, or walking the wrong direction on an escalator.
+It isn’t even nescessarily related to programming, leave alone breaking into computers.</p>
 
-<p>If you have pagination, the permalink for the pagination could be as simple as <code class="highlighter-rouge">paginate_path: "page/:num"</code></p>
+<p>The term “Hacker” has lost its original meaning.
+The difference between the two terms is: Hackers make stuff, Crackers break it.
+All the journalists and writers, please note the difference. You are the main reason of this confusion.</p>
 
-<p>Now the tricky and more exciting part, which is telling apache to remove the trailing slashes! Here’s how I did it, with this htaccess configuartion:</p>
+<p>I keep pursuing people to switch to Linux because it is Free and Open Source, but what really made me stick to Linux was the fact that I like to tinker with my system. I like to play around, break stuff, and spend the whole night fixing it.
+I like to reboot my computer while the system updates are being applied, just to see if that breaks my setup. <strong>That’s really what Hacking is all about</strong>.
+(Although the last example was suicidal on my laptop :P, but Hacking doesn’t need to fulfil a purpose. It only needs to be fun :D)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Options -Multiviews +FollowSymLinks
-RewriteEngine On
-RewriteBase /
-DirectorySlash Off
+<p>And hacking isn’t only about doing awesome stuff, it is also about sharing it with the community, and collaborating with like minded people.
+See <a href="https://en.wikipedia.org/wiki/Hacker_ethic">Hacker ethics</a>.</p>
 
-# remove the trailing slash
-RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=301,L]
+<p>The hacker culture shares its roots with the <a href="http://fsf.org">Free Software</a>, the <a href="http://opensource.org">Open Source</a> and the <a href="http://linuxfoundation.org">Linux</a> culture.
+These cultures overlap so much, that to much extent, they are the same. <a href="http://www.catb.org/~esr/faqs/hacker-howto.html#what_is">[ref]</a>
+Hackers are the people who provided the backbone to the World Wide Web, as we know it today. They invented Unix.
+They resurrected the lost principle of sharing and collaborating code. They proved that <em>given enough eyeballs, all bugs are shallow</em>.</p>
 
-# rewrite /dir/file to /dir/file/index.html
-RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
-</code></pre></div></div>
+<p>Here are a few sources from very influential people in the Hacker community, which inspired this post:
+Richard Stallman’s post <a href="https://stallman.org/articles/on-hacking.html">On Hacking</a>
+Eric Raymond’s <a href="http://www.catb.org/~esr/faqs/hacker-howto.html">How To Become A Hacker</a>
+and the <a href="https://en.wikipedia.org/wiki/Hacker_%28programmer_subculture%29">Wikipedia Article</a> on Hacker subculture.</p>
 
-<div class="alert alert-warning" role="alert"><strong>Disclaimer:</strong> By no means I'm an expert in writing .htaccess files! But, it's working as I expect it to do. Note that it also passes the queries (if there are any).</div>
-
-<p>We’re done! but there’s one more thing I’d like to mention:</p>
-
-<p>In this approach, jekyll creates a directory for each post, which in my opinion is not very nice. The solution for that will be to tell jekyll to create all posts as html files in some directory, like <code class="highlighter-rouge">blog</code> and then have Apache load the actual file for each post from the <code class="highlighter-rouge">blog</code> folder. However, if you try this, you’ll realize that jekyll always creates the paginations in folder structure (<code class="highlighter-rouge">/page/2/index.html</code>) and there’s no easy way to make it create html files (<code class="highlighter-rouge">/page/2.html</code>), and therefore that’ll messup our htaccess url rewrite. Now, if you have a decent knowledge of <a href="http://regex.learncodethehardway.org/">regex</a>, then you’re fine and you can separate blog posts from paginations, but that’s not the case for me :p, so this is as far as I will go.</p>
-
-<p>I also thought it might be useful to link to <a href="http://andrewho.co.uk/weblog/clean-urls-on-jekyll-apache">this article</a>; although I didn’t use it myself and I only found it after doing what I just described in this post.</p>
+<p>Happy Hacking!</p>
 
         </div>
       </div>
