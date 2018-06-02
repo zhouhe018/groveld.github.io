@@ -1,14 +1,14 @@
 'use strict';
 
-const cacheName = 'groveld-1527880346';
+const cacheName = 'groveld-cache';
 const cacheFiles = [
   '/',
   '/about',
-  '/articles',
   '/contact',
   '/cookies',
   '/privacy',
   '/terms',
+  '/articles/',
   '/articles/htaccess-snippets',
   '/articles/www-non-www-redirection',
   '/articles/give-user-permission-to-edit-and-add-files-in-var-www',
@@ -35,10 +35,10 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        return response || fetch(event.request);
-      })
-  );
+  // event.respondWith(
+  //   caches.match(event.request)
+  //     .then(response => {
+  //       return response || fetch(event.request);
+  //     })
+  // );
 });
