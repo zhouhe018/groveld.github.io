@@ -22,14 +22,14 @@
     <title>Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/css/app.css">
+    <link rel="stylesheet" href="/static/css/app.css">
   </head>
   <body>
     
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-2">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="/public/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
+      <img src="/static/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
       Martin Groeneveld
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +37,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="/articles">Articles</a>
-        <a class="nav-item nav-link" href="/about">About</a>
-        <a class="nav-item nav-link" href="/contact">Contact</a>
+        <a class="nav-item nav-link active" href="/articles/">Articles</a>
+        <a class="nav-item nav-link" href="/about/">About</a>
+        <a class="nav-item nav-link" href="/contact/">Contact</a>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2015-09-06</h6>
-          <h5 class="card-title"><a href="/articles/htaccess-snippets" class="card-link">A collection of useful .htaccess snippets</a></h5>
+          <h5 class="card-title"><a href="/articles/htaccess-snippets/" class="card-link">A collection of useful .htaccess snippets</a></h5>
           <p class="card-text my-0">Disclaimer: While dropping the snippet into an ".htaccess" file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.
 
 </p>
@@ -63,7 +63,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2015-01-16</h6>
-          <h5 class="card-title"><a href="/articles/www-non-www-redirection" class="card-link">Nginx config for www and non-www redirection</a></h5>
+          <h5 class="card-title"><a href="/articles/www-non-www-redirection/" class="card-link">Nginx config for www and non-www redirection</a></h5>
           <p class="card-text my-0">There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.
 
 </p>
@@ -73,7 +73,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2015-01-10</h6>
-          <h5 class="card-title"><a href="/articles/give-user-permission-to-edit-and-add-files-in-var-www" class="card-link">Give user permission to edit and add files in /var/www</a></h5>
+          <h5 class="card-title"><a href="/articles/give-user-permission-to-edit-and-add-files-in-var-www/" class="card-link">Give user permission to edit and add files in /var/www</a></h5>
           <p class="card-text my-0">Tutorial showing you how to give an Ubuntu user the right to edit and add files in the /var/www folders.
 
 </p>
@@ -83,7 +83,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2015-01-09</h6>
-          <h5 class="card-title"><a href="/articles/use-gitolite-to-control-access-to-a-git-server" class="card-link">Use Gitolite to Control Access to a Git Server</a></h5>
+          <h5 class="card-title"><a href="/articles/use-gitolite-to-control-access-to-a-git-server/" class="card-link">Use Gitolite to Control Access to a Git Server</a></h5>
           <p class="card-text my-0">Git is a great distributed version control system that can be used to keep track of changes and code for any kind of project. Sometimes, it is helpful to configure a git server to house your team’s projects. Gitolite provides an access-control layer for a git server, so that you can configure user-based git access without the accompanying operating system user accounts. This provides your git contributors the privileges they need, without exposing your server...</p>
         </div>
       </div>
@@ -91,7 +91,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2014-03-15</h6>
-          <h5 class="card-title"><a href="/articles/open-hackerspaces-day-2014" class="card-link">March 29th marks this years International open Hackerspaces day</a></h5>
+          <h5 class="card-title"><a href="/articles/open-hackerspaces-day-2014/" class="card-link">March 29th marks this years International open Hackerspaces day</a></h5>
           <p class="card-text my-0">Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.
 
 </p>
@@ -101,7 +101,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2014-02-15</h6>
-          <h5 class="card-title"><a href="/articles/how-to-use-gpg-to-encrypt-and-sign-messages" class="card-link">How To Use GPG to Encrypt and Sign Messages</a></h5>
+          <h5 class="card-title"><a href="/articles/how-to-use-gpg-to-encrypt-and-sign-messages/" class="card-link">How To Use GPG to Encrypt and Sign Messages</a></h5>
           <p class="card-text my-0">GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine. In this guide, we will discuss how GPG works and how to implement it. We will be using an Ubuntu 12.04 VPS for this demonstration, but the tools are available on any modern Linux distribution. How Public Key Encryption Works...</p>
         </div>
       </div>
@@ -109,7 +109,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2014-02-08</h6>
-          <h5 class="card-title"><a href="/articles/postfix-with-mysql-backend-and-tls" class="card-link">Postfix with MySQL backend and TLS</a></h5>
+          <h5 class="card-title"><a href="/articles/postfix-with-mysql-backend-and-tls/" class="card-link">Postfix with MySQL backend and TLS</a></h5>
           <p class="card-text my-0">In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAp services.
 
 </p>
@@ -119,7 +119,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2014-02-01</h6>
-          <h5 class="card-title"><a href="/articles/clean-urls-with-jekyll-apache" class="card-link">Clean URLs with Jekyll/Apache</a></h5>
+          <h5 class="card-title"><a href="/articles/clean-urls-with-jekyll-apache/" class="card-link">Clean URLs with Jekyll/Apache</a></h5>
           <p class="card-text my-0">Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes not having a slash at the end of the urls. For example, groveld.com/about.
 
 </p>
@@ -129,7 +129,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2014-01-18</h6>
-          <h5 class="card-title"><a href="/articles/what-it-really-means-to-hack" class="card-link">What it really means to Hack</a></h5>
+          <h5 class="card-title"><a href="/articles/what-it-really-means-to-hack/" class="card-link">What it really means to Hack</a></h5>
           <p class="card-text my-0">I once mentioned it to a classmate that I use GNU/Linux as the only Operating System at home, and he replied in shock, “That’s used by Hackers? Right?” That is true. Almost everyone who calls himself/herself a Hacker uses it, but the fear on his face suggested that he meant to say Crackers. Noooo! Linux users aren’t Crackers. That would be similar to saying that everyone who owns a slide hammer, is a car thief!...</p>
         </div>
       </div>
@@ -137,7 +137,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2013-11-16</h6>
-          <h5 class="card-title"><a href="/articles/teamspeak-3-server-on-debian-ubuntu" class="card-link">TeamSpeak 3 server on Debian/Ubuntu</a></h5>
+          <h5 class="card-title"><a href="/articles/teamspeak-3-server-on-debian-ubuntu/" class="card-link">TeamSpeak 3 server on Debian/Ubuntu</a></h5>
           <p class="card-text my-0">It has been a long time since my last post – I’m sorry for that but I didn’t have the time. Anyway I just installed TeamSpeak 3 on a Ubuntu 10.04 for a friend and want to share that info. Getting TeamSpeak running is mostly not the problem but you don’t want to start it after every boot by hand or run it as root. This Howto shows what I did. I assume that all...</p>
         </div>
       </div>
@@ -145,7 +145,7 @@
       <div class="card my-3">
         <div class="card-body">
           <h6 class="card-subtitle text-muted my-1 small">2013-06-08</h6>
-          <h5 class="card-title"><a href="/articles/ohm2013-observe-hack-make" class="card-link">OHM2013. Observe, Hack, Make</a></h5>
+          <h5 class="card-title"><a href="/articles/ohm2013-observe-hack-make/" class="card-link">OHM2013. Observe, Hack, Make</a></h5>
           <p class="card-text my-0">OHM2013. Observe, Hack, Make. A five day outdoor international camping festival for hackers and makers, and those with an inquisitive mind. On 31st July 2013, 3000 of those minds will descend upon on an unassuming patch of land, at the Geestmerambacht festival grounds, 30km north of Amsterdam.
 
 </p>
@@ -163,7 +163,7 @@
       <div class="row">
         <div class="col">
           <div class="small text-center">
-            &copy; 2018 Martin Groeneveld &bull; <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a> &bull; <a href="/cookies">Cookies</a>
+            &copy; 2018 Martin Groeneveld &bull; <a href="/legal/terms/">Terms</a> &bull; <a href="/legal/privacy/">Privacy</a> &bull; <a href="/legal/cookies/">Cookies</a>
           </div>
         </div>
       </div>
@@ -173,6 +173,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/public/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
   </body>
 </html>

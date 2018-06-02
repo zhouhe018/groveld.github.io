@@ -18,18 +18,18 @@
     <meta name="description" content="The personal website of Martin Groeneveld">
     <meta name="author" content="groveld">
     <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="/atom.xml">
-    <link rel="canonical" href="/articles/give-user-permission-to-edit-and-add-files-in-var-www">
-    <title>Give user permission to edit and add files in /var/www - Martin Groeneveld</title>
+    <link rel="canonical" href="/articles/open-hackerspaces-day-2014/">
+    <title>March 29th marks this years International open Hackerspaces day - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/css/app.css">
+    <link rel="stylesheet" href="/static/css/app.css">
   </head>
   <body>
     
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-2">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="/public/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
+      <img src="/static/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
       Martin Groeneveld
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +37,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="/articles">Articles</a>
-        <a class="nav-item nav-link" href="/about">About</a>
-        <a class="nav-item nav-link" href="/contact">Contact</a>
+        <a class="nav-item nav-link active" href="/articles/">Articles</a>
+        <a class="nav-item nav-link" href="/about/">About</a>
+        <a class="nav-item nav-link" href="/contact/">Contact</a>
       </div>
     </div>
   </div>
@@ -74,42 +74,39 @@
             Content
           </button>
 
-          <h1 class="card-title">Give user permission to edit and add files in /var/www</h1>
-          <p>Tutorial showing you how to give an Ubuntu user the right to edit and add files in the <code class="highlighter-rouge">/var/www</code> folders.</p>
+          <h1 class="card-title">March 29th marks this years International open Hackerspaces day</h1>
+          <p>Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.</p>
 
-<p>Add the www-data group to an existing user</p>
+<p>Designing 3D printed cookie cutters, making your own soap, milling furniture, from adjusting the colours of your living room lights to match the film you’re watching to checking how secure Whatsapp really is. It’s all possible in a hackerspace.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-a</span> <span class="nt">-G</span> www-data username
-</code></pre></div></div>
+<p>A hackerspace is an environment where creative, legal, technical and other curious people join together to work, think about and talk over a wide variety of subjects. “Some of these projects are really practical, others are more “because we can”. What is always the same is our goal to gather knowledge, work together and share our knowledge” says Jildou, founder of the Frack hackerspace.</p>
 
-<p>OR if the user doesn’t exist: Create a new user and assign them the <code class="highlighter-rouge">www-data</code> group</p>
+<p>The members of many hackerspaces demonstrate this goal by inviting anyone curious  to come by and see what’s possible. Hacking isn’t just what the media tells you it is.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>adduser username www-data
-</code></pre></div></div>
+<p>“The hackerspaces like to supplement each other and work together where possible. This way we can learn from each others faults, increase our knowledge and will we be able to offer a wide variety of projects all around the country”, explains Dave Borghuis, the founder of Tkkrlab.</p>
 
-<p>Make sure all files are owned by the www-data group and user (cleans up the ownership)</p>
+<p>Next to building machines, members also work on projects to, for example, remotely open the front door of their space, or to adjust the temperature of multiple areas via the internet. There’s also a collaboration with a library to teach kids how to solder, there are privacy workshops on multiple locations and spaces work together with municipalities regarding security and open data.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown</span> <span class="nt">-R</span> www-data:www-data /var/www
-</code></pre></div></div>
+<p>The open day will be a colourful whole, with activities spread all through the country. Every hackerspace will have their own interpretation. An overview of activities and opening times can be found at <a href="http://hackerspaces.nl/">http://hackerspaces.nl/</a> or on the website of the local space.</p>
 
-<p>Enable all members of the www-data group to read and write files</p>
+<p>Everybody is welcome to come over!</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> <span class="nt">-R</span> g+rw /var/www
-</code></pre></div></div>
+<p>12 Dutch hackerspaces are joining, for more information about the activities take a look at their own website.</p>
 
-<p><strong>Note:</strong> You are done. But if you want all future files created in this directory to keep the current setup do the following as well:</p>
-
-<p>This is what I do to ensure that all files created keep the current user and permissions (it’s really lame to create new files, say from Git, and then have to update the user, groups and permissions of the new files every time to ensure they can be run by the server)</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> <span class="nt">-R</span> g+rws /var/www
-</code></pre></div></div>
-
-<p><strong>Final Note:</strong> For security reasons it may be better to keep /var/www owned by root:root (depending on what you are doing)</p>
-
-<p>If you want to keep <code class="highlighter-rouge">/var/www</code> owned by root replace step 2 with</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chgrp</span> <span class="nt">-R</span> www-data /var/www/<span class="k">*</span>
-</code></pre></div></div>
+<ul>
+  <li>Almere: <a href="http://sk1llz.nl/">Sk1llz</a></li>
+  <li>Amersfoort: <a href="http://bitlair.nl/">Bitlair</a></li>
+  <li>Amsterdam: <a href="http://techinc.nl/">Technologia Incognita</a></li>
+  <li>Amsterdam: <a href="http://laglab.org/">LAG</a></li>
+  <li>Arnhem: <a href="http://hack42.nl/">Hack42</a></li>
+  <li>Den Haag: <a href="http://revspace.nl/">Revelation Space</a></li>
+  <li>Eindhoven : <a href="http://madspace.nl/">MADspace</a></li>
+  <li>Enschede: <a href="http://tkkrlab.nl/">TkkrLab</a></li>
+  <li>Heerlen: <a href="https://ackspace.nl/">ACKspace</a></li>
+  <li>Leeuwarden: <a href="http://frack.nl/">Frack</a></li>
+  <li>Utrecht: <a href="http://www.randomdata.nl/">RandomData</a></li>
+  <li>Wageningen: <a href="http://nurdspace.nl/">NURDspace</a></li>
+</ul>
 
         </div>
       </div>
@@ -127,7 +124,7 @@
       <div class="row">
         <div class="col">
           <div class="small text-center">
-            &copy; 2018 Martin Groeneveld &bull; <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a> &bull; <a href="/cookies">Cookies</a>
+            &copy; 2018 Martin Groeneveld &bull; <a href="/legal/terms/">Terms</a> &bull; <a href="/legal/privacy/">Privacy</a> &bull; <a href="/legal/cookies/">Cookies</a>
           </div>
         </div>
       </div>
@@ -137,6 +134,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/public/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
   </body>
 </html>

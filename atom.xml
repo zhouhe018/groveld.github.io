@@ -4,7 +4,7 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2018-06-02T08:15:44+00:00</updated>
+  <updated>2018-06-02T09:12:49+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>groveld</name>
@@ -14,7 +14,7 @@
   
   <entry>
     <id>/articles/htaccess-snippets</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/htaccess-snippets"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/htaccess-snippets/"/>
     <title>A collection of useful .htaccess snippets</title>
     <author>
       <name>groveld</name>
@@ -477,7 +477,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
   
   <entry>
     <id>/articles/www-non-www-redirection</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/www-non-www-redirection"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/www-non-www-redirection/"/>
     <title>Nginx config for www and non-www redirection</title>
     <author>
       <name>groveld</name>
@@ -526,7 +526,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
   
   <entry>
     <id>/articles/give-user-permission-to-edit-and-add-files-in-var-www</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www/"/>
     <title>Give user permission to edit and add files in /var/www</title>
     <author>
       <name>groveld</name>
@@ -573,7 +573,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
   
   <entry>
     <id>/articles/use-gitolite-to-control-access-to-a-git-server</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server/"/>
     <title>Use Gitolite to Control Access to a Git Server</title>
     <author>
       <name>groveld</name>
@@ -793,7 +793,7 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
   
   <entry>
     <id>/articles/open-hackerspaces-day-2014</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/open-hackerspaces-day-2014"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/open-hackerspaces-day-2014/"/>
     <title>March 29th marks this years International open Hackerspaces day</title>
     <author>
       <name>groveld</name>
@@ -837,7 +837,7 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
   
   <entry>
     <id>/articles/how-to-use-gpg-to-encrypt-and-sign-messages</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages/"/>
     <title>How To Use GPG to Encrypt and Sign Messages</title>
     <author>
       <name>groveld</name>
@@ -1103,7 +1103,7 @@ sub   4096R/8822A56A 2013-10-04
   
   <entry>
     <id>/articles/postfix-with-mysql-backend-and-tls</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls/"/>
     <title>Postfix with MySQL backend and TLS</title>
     <author>
       <name>groveld</name>
@@ -1332,7 +1332,7 @@ postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s
   
   <entry>
     <id>/articles/clean-urls-with-jekyll-apache</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache/"/>
     <title>Clean URLs with Jekyll/Apache</title>
     <author>
       <name>groveld</name>
@@ -1373,7 +1373,7 @@ RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
   
   <entry>
     <id>/articles/what-it-really-means-to-hack</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/what-it-really-means-to-hack"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/what-it-really-means-to-hack/"/>
     <title>What it really means to Hack</title>
     <author>
       <name>groveld</name>
@@ -1418,7 +1418,7 @@ and the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hacker_%28programmer_subc
   
   <entry>
     <id>/articles/teamspeak-3-server-on-debian-ubuntu</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/teamspeak-3-server-on-debian-ubuntu"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/teamspeak-3-server-on-debian-ubuntu/"/>
     <title>TeamSpeak 3 server on Debian/Ubuntu</title>
     <author>
       <name>groveld</name>
@@ -1513,7 +1513,7 @@ udp        0      0 0.0.0.0:9987            0.0.0.0:&lt;span class=&quot;k&quot;
   
   <entry>
     <id>/articles/ohm2013-observe-hack-make</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/ohm2013-observe-hack-make"/>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/ohm2013-observe-hack-make/"/>
     <title>OHM2013. Observe, Hack, Make</title>
     <author>
       <name>groveld</name>
