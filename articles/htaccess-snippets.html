@@ -22,7 +22,7 @@
     <title>A collection of useful .htaccess snippets - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/style.css">
   </head>
   <body>
     
@@ -46,89 +46,12 @@
 </nav>
 
 
-    <!-- Modal TOC -->
-<div class="modal fade" id="modalTOC" tabindex="-1" role="dialog" aria-labelledby="modalTOC" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Contents</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul id="toc">
-  <li><a href="#credits">Credits</a></li>
-  <li><a href="#rewrite-and-redirection">Rewrite and Redirection</a>
-    <ul>
-      <li><a href="#force-www">Force www</a></li>
-      <li><a href="#force-www-in-a-generic-way">Force www in a Generic Way</a></li>
-      <li><a href="#force-non-www">Force non-www</a></li>
-      <li><a href="#force-non-www-in-a-generic-way">Force non-www in a Generic Way</a></li>
-      <li><a href="#force-https">Force HTTPS</a></li>
-      <li><a href="#force-https-behind-a-proxy">Force HTTPS Behind a Proxy</a></li>
-      <li><a href="#force-trailing-slash">Force Trailing Slash</a></li>
-      <li><a href="#remove-trailing-slash">Remove Trailing Slash</a></li>
-      <li><a href="#redirect-a-single-page">Redirect a Single Page</a></li>
-      <li><a href="#alias-a-single-directory">Alias a Single Directory</a></li>
-      <li><a href="#alias-paths-to-script">Alias Paths To Script</a></li>
-      <li><a href="#redirect-an-entire-site">Redirect an Entire Site</a></li>
-      <li><a href="#alias-clean-urls">Alias “Clean” URLs</a></li>
-    </ul>
-  </li>
-  <li><a href="#security">Security</a>
-    <ul>
-      <li><a href="#deny-all-access">Deny All Access</a></li>
-      <li><a href="#deny-all-access-except-yours">Deny All Access Except Yours</a></li>
-      <li><a href="#allow-all-access-except-spammers">Allow All Access Except Spammers’</a></li>
-      <li><a href="#deny-access-to-hidden-files-and-directories">Deny Access to Hidden Files and Directories</a></li>
-      <li><a href="#deny-access-to-backup-and-source-files">Deny Access to Backup and Source Files</a></li>
-      <li><a href="#disable-directory-browsing">Disable Directory Browsing</a></li>
-      <li><a href="#disable-image-hotlinking">Disable Image Hotlinking</a></li>
-      <li><a href="#disable-image-hotlinking-for-specific-domains">Disable Image Hotlinking for Specific Domains</a></li>
-      <li><a href="#password-protect-a-directory">Password Protect a Directory</a></li>
-      <li><a href="#password-protect-a-file-or-several-files">Password Protect a File or Several Files</a></li>
-      <li><a href="#block-visitors-by-referrer">Block Visitors by Referrer</a></li>
-      <li><a href="#prevent-framing-the-site">Prevent Framing the Site</a></li>
-    </ul>
-  </li>
-  <li><a href="#performance">Performance</a>
-    <ul>
-      <li><a href="#compress-text-files">Compress Text Files</a></li>
-      <li><a href="#set-expires-headers">Set Expires Headers</a></li>
-      <li><a href="#turn-etags-off">Turn eTags Off</a></li>
-    </ul>
-  </li>
-  <li><a href="#miscellaneous">Miscellaneous</a>
-    <ul>
-      <li><a href="#set-php-variables">Set PHP Variables</a></li>
-      <li><a href="#custom-error-pages">Custom Error Pages</a></li>
-      <li><a href="#force-downloading">Force Downloading</a></li>
-      <li><a href="#prevent-downloading">Prevent Downloading</a></li>
-      <li><a href="#allow-cross-domain-fonts">Allow Cross-Domain Fonts</a></li>
-      <li><a href="#auto-utf-8-encode">Auto UTF-8 Encode</a></li>
-      <li><a href="#switch-to-another-php-version">Switch to Another PHP Version</a></li>
-      <li><a href="#disable-internet-explorer-compatibility-view">Disable Internet Explorer Compatibility View</a></li>
-      <li><a href="#serve-webp-images">Serve WebP Images</a></li>
-    </ul>
-  </li>
-</ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
+    <div class="container-fluid">
 
   <div class="row">
     <div class="col">
       <div class="card my-3">
         <div class="card-body">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTOC">
-            Content
-          </button>
-
           <h1 class="card-title">A collection of useful .htaccess snippets</h1>
           <div class="alert alert-warning"><strong>Disclaimer:</strong> While dropping the snippet into an ".htaccess" file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.</div>
 
@@ -608,6 +531,6 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
   </body>
 </html>

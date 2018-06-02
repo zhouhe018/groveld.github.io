@@ -22,7 +22,7 @@
     <title>Postfix with MySQL backend and TLS - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/style.css">
   </head>
   <body>
     
@@ -46,50 +46,12 @@
 </nav>
 
 
-    <!-- Modal TOC -->
-<div class="modal fade" id="modalTOC" tabindex="-1" role="dialog" aria-labelledby="modalTOC" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Contents</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul id="toc">
-  <li><a href="#install-the-postfix-mail-server-mysql-server-and-other-required-packages">Install the Postfix mail server, MySql server and other required packages</a></li>
-  <li><a href="#create-a-mysql-database-that-will-contain-domains-and-mappings-and-create-a-user-that-has-read-privileges-on-it">Create a MySql database that will contain domains and mappings and create a user that has read privileges on it</a></li>
-  <li><a href="#populate-tables-with-some-test-data">Populate tables with some test data</a></li>
-  <li><a href="#create-mysql-mappings-for-postfix-replace-mysql_-with-your-mysql-credentials">Create MySql mappings for Postfix. Replace {mysql_*} with your MySql credentials</a></li>
-  <li><a href="#set-correct-permissions-on-the-newly-created-files-and-allow-postfix-to-read-the-files">Set correct permissions on the newly created files and allow Postfix to read the files</a></li>
-  <li><a href="#create-a-new-user-and-group-named-vmail-all-incoming-mail-will-be-stored-in-this-users-home-directory">Create a new user and group named vmail. All incoming mail will be stored in this users home directory</a></li>
-  <li><a href="#configure-postfix-to-use-sasl-for-user-authentication-and-tls-for-encryption">Configure Postfix to use SASL for user authentication and TLS for encryption</a></li>
-  <li><a href="#configure-postfix-to-use-the-mysql-database-to-find-virtual-users-where-to-store-mail-and-what-to-do-for-users-over-quota">Configure Postfix to use the MySql database to find virtual users, where to store mail and what to do for users over quota</a></li>
-  <li><a href="#create-a-self-signed-certificate-to-encrypt-connections">Create a self signed certificate to encrypt connections</a></li>
-  <li><a href="#make-postfix-listen-on-port-465-for-secure-smtp-connections">Make Postfix listen on port 465 for secure smtp connections</a></li>
-  <li><a href="#force-sasl-to-store-the-pid-files-in-a-location-where-postfix-can-read-them">Force SASL to store the PID files in a location where Postfix can read them</a></li>
-  <li><a href="#insert-mysql-credentials-for-pam-nano-etcpamdsmtp">Insert MySql credentials for PAM (nano /etc/pam.d/smtp)**</a></li>
-  <li><a href="#config-sasl-for-postfix-and-specify-mysql-credentials">Config SASL for Postfix and specify MySql credentials</a></li>
-  <li><a href="#add-the-postfix-user-to-the-sasl-group-allowing-postfix-to-communicate-with-sasl">Add the Postfix user to the SASL group allowing Postfix to communicate with SASL</a></li>
-  <li><a href="#restart-postfix-and-sasl">Restart Postfix and SASL</a></li>
-</ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
+    <div class="container-fluid">
 
   <div class="row">
     <div class="col">
       <div class="card my-3">
         <div class="card-body">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTOC">
-            Content
-          </button>
-
           <h1 class="card-title">Postfix with MySQL backend and TLS</h1>
           <p>In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAp services.</p>
 
@@ -346,6 +308,6 @@ postconf <span class="nt">-e</span> <span class="s1">'proxy_read_maps = $local_r
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
   </body>
 </html>

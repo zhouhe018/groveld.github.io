@@ -22,7 +22,7 @@
     <title>How To Use GPG to Encrypt and Sign Messages - Martin Groeneveld</title>
     <!-- Bootstrap CSS, Custom CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/style.css">
   </head>
   <body>
     
@@ -46,62 +46,12 @@
 </nav>
 
 
-    <!-- Modal TOC -->
-<div class="modal fade" id="modalTOC" tabindex="-1" role="dialog" aria-labelledby="modalTOC" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Contents</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul id="toc">
-  <li><a href="#how-public-key-encryption-works">How Public Key Encryption Works</a>
-    <ul>
-      <li><a href="#ensure-that-only-the-intended-party-can-read">Ensure That Only the Intended Party Can Read</a></li>
-      <li><a href="#validate-the-identity-of-the-sender">Validate the Identity of the Sender</a></li>
-    </ul>
-  </li>
-  <li><a href="#set-up-gpg-keys">Set Up GPG Keys</a>
-    <ul>
-      <li><a href="#create-a-revocation-certificate">Create a Revocation Certificate</a></li>
-    </ul>
-  </li>
-  <li><a href="#how-to-import-other-users-public-keys">How To Import Other Users’ Public Keys</a></li>
-  <li><a href="#how-to-verify-and-sign-keys">How To Verify and Sign Keys</a>
-    <ul>
-      <li><a href="#verify-the-other-persons-identity">Verify the Other Person’s Identity</a></li>
-      <li><a href="#sign-their-key">Sign Their Key</a></li>
-    </ul>
-  </li>
-  <li><a href="#how-to-make-your-public-key-highly-available">How To Make Your Public Key Highly Available</a>
-    <ul>
-      <li><a href="#encrypt-and-decrypt-messages-with-gpg">Encrypt and Decrypt Messages with GPG</a></li>
-      <li><a href="#encrypt-messages">Encrypt Messages</a></li>
-      <li><a href="#decrypt-messages">Decrypt Messages</a></li>
-    </ul>
-  </li>
-  <li><a href="#key-maintenance">Key Maintenance</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
+    <div class="container-fluid">
 
   <div class="row">
     <div class="col">
       <div class="card my-3">
         <div class="card-body">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTOC">
-            Content
-          </button>
-
           <h1 class="card-title">How To Use GPG to Encrypt and Sign Messages</h1>
           <p>GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.</p>
 
@@ -395,6 +345,6 @@ sub   4096R/8822A56A 2013-10-04
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
   </body>
 </html>
