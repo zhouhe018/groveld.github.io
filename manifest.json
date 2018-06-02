@@ -51,6 +51,7 @@
     }
   ],
   "start_url": "/?utm_source=homescreen",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#343a40",
