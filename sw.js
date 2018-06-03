@@ -1,7 +1,6 @@
 'use strict';
 
 const urlsToCache = ['/?utm_source=homescreen'];
-
 // Cache assets
 urlsToCache.push('/CNAME')
 urlsToCache.push('/favicon.ico')
@@ -56,7 +55,6 @@ urlsToCache.push('/articles/teamspeak-3-server-on-debian-ubuntu')
 urlsToCache.push('/articles/ohm2013-observe-hack-make')
 
 // Cache pages
-urlsToCache.push('/404')
 urlsToCache.push('/about')
 urlsToCache.push('/blog')
 urlsToCache.push('/contact')
@@ -66,18 +64,39 @@ urlsToCache.push('/legal/privacy')
 urlsToCache.push('/legal/terms')
 
 
-const cacheName = 'groveld-cache-v3';
+const cacheName = `groveld-1528030168`;
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(cacheName)
+      .then(cache => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!cacheName.includes(key)) return caches.delete(key);
+      })
+    ))
+  );
 });
 
 self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        return response;
+      } else {
+        return fetch(event.request).then(function(res) {
+          return caches.open(cacheName).then(function(cache) {
+            cache.put(event.request.url, res.clone());
+            return res;
+          });
+        });
+      }
+    })
+  );
 });
