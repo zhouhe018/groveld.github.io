@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheName = `groveld-1528030970`;
+const cacheName = `groveld-1528031086`;
 const urlsToCache = ['/?utm_source=homescreen'];
 
 // Cache assets
@@ -69,8 +69,9 @@ urlsToCache.push('/legal/terms')
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(cacheName)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(cacheName).then(cache => {
+      cache.addAll(urlsToCache)
+    })
   );
 });
 
