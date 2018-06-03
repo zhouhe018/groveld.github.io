@@ -1,12 +1,14 @@
 'use strict';
 
-const cacheName = `groveld-1528031086`;
+const cacheName = `groveld-1528042640`;
 const urlsToCache = ['/?utm_source=homescreen'];
 
 // Cache assets
 urlsToCache.push('/CNAME')
 urlsToCache.push('/favicon.ico')
 urlsToCache.push('/static/css/style.css')
+urlsToCache.push('/static/icons/android-chrome-192x192.png')
+urlsToCache.push('/static/icons/android-chrome-512x512.png')
 urlsToCache.push('/static/icons/apple/apple-touch-icon-114x114-precomposed.png')
 urlsToCache.push('/static/icons/apple/apple-touch-icon-114x114.png')
 urlsToCache.push('/static/icons/apple/apple-touch-icon-120x120-precomposed.png')
