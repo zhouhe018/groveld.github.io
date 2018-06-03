@@ -1,6 +1,8 @@
 'use strict';
 
+const cacheName = `groveld-1528030970`;
 const urlsToCache = ['/?utm_source=homescreen'];
+
 // Cache assets
 urlsToCache.push('/CNAME')
 urlsToCache.push('/favicon.ico')
@@ -64,8 +66,6 @@ urlsToCache.push('/legal/privacy')
 urlsToCache.push('/legal/terms')
 
 
-const cacheName = `groveld-1528030168`;
-
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
@@ -84,19 +84,5 @@ self.addEventListener('activate', event => {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        return response;
-      } else {
-        return fetch(event.request).then(function(res) {
-          return caches.open(cacheName).then(function(cache) {
-            cache.put(event.request.url, res.clone());
-            return res;
-          });
-        });
-      }
-    })
-  );
+self.addEventListener('fetch', event => {
 });
