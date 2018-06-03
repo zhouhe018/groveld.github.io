@@ -56,6 +56,7 @@ urlsToCache.push('/articles/teamspeak-3-server-on-debian-ubuntu')
 urlsToCache.push('/articles/ohm2013-observe-hack-make')
 
 // Cache pages
+urlsToCache.push('/404')
 urlsToCache.push('/about')
 urlsToCache.push('/blog')
 urlsToCache.push('/contact')
@@ -76,18 +77,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-  console.log('Activating Service Worker ....', event);
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open(cacheName).then(function(cache) {
-      return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request).then(function(response) {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
 });
