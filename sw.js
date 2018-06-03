@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheName = `groveld-1528042640`;
+const cacheName = `groveld-1528047880`;
 const urlsToCache = ['/?utm_source=homescreen'];
 
 // Cache assets
@@ -30,14 +30,6 @@ urlsToCache.push('/static/icons/apple/apple-touch-icon-76x76.png')
 urlsToCache.push('/static/icons/apple/apple-touch-icon-precomposed.png')
 urlsToCache.push('/static/icons/apple/apple-touch-icon.png')
 urlsToCache.push('/static/icons/apple/safari-pinned-tab.svg')
-urlsToCache.push('/static/icons/icon-128x128.png')
-urlsToCache.push('/static/icons/icon-144x144.png')
-urlsToCache.push('/static/icons/icon-152x152.png')
-urlsToCache.push('/static/icons/icon-192x192.png')
-urlsToCache.push('/static/icons/icon-384x384.png')
-urlsToCache.push('/static/icons/icon-512x512.png')
-urlsToCache.push('/static/icons/icon-72x72.png')
-urlsToCache.push('/static/icons/icon-96x96.png')
 urlsToCache.push('/static/icons/windows/large.jpg')
 urlsToCache.push('/static/icons/windows/medium.jpg')
 urlsToCache.push('/static/icons/windows/small.jpg')
@@ -71,9 +63,8 @@ urlsToCache.push('/legal/terms')
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(cacheName).then(cache => {
-      cache.addAll(urlsToCache)
-    })
+    caches.open(cacheName)
+      .then(cache => cache.addAll(urlsToCache))
   );
 });
 
