@@ -1,7 +1,7 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528118180';
-const urlsToCache = ['/?utm_source=homescreen','/sw.js','/manifest.json','/offline'];
+const CACHE_NAME = 'groveld-1528118194';
+const urlsToCache = ['/?utm_source=homescreen','/sw.js','/manifest.json','/offline','/articles/htaccess-snippets'];
 
 self.addEventListener('install', function(event) {
   self.skipWaiting();
