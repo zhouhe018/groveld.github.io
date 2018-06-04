@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528109302';
+const CACHE_NAME = 'groveld-1528110141';
 const urlsToCache = ['/','/?utm_source=homescreen','/manifest.json','/sw.js','/404','/offline','https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'];
 
 self.addEventListener('install', function(event) {
