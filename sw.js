@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheHash = 1528101507;
+const cacheHash = 1528101718;
 const CACHE_NAME = 'groveld-' + cacheHash;
 const urlsToCache = ['/?utm_source=homescreen','/','/static/images/logo.png','/404'];
 
