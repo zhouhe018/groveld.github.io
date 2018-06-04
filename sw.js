@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheVersion = '1528147170::';
+const cacheVersion = '1528151034::';
 const urlsToCache = [
   '/',
   '/?utm_source=homescreen',
