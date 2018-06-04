@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528116626';
+const CACHE_NAME = 'groveld-1528116866';
 const urlsToCache = ['/','/?utm_source=homescreen','/manifest.json','/sw.js','/offline','/404'];
 
 self.addEventListener('install', function(event) {
@@ -13,6 +13,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
+  self.clients.claim();
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
