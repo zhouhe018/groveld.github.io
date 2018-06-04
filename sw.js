@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528110141';
+const CACHE_NAME = 'groveld-1528110207';
 const urlsToCache = ['/','/?utm_source=homescreen','/manifest.json','/sw.js','/404','/offline','https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'];
 
 self.addEventListener('install', function(event) {
@@ -16,7 +16,7 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
       return Promise.all(keys.map(function(key) {
-        if (CACHE_NAME.indexOf(key) === -1) {
+        if (key !== CACHE_NAME) {
           return caches.delete(key);
         }
       }));
