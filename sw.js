@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheHash = 1528101866;
+const cacheHash = 1528102180;
 const CACHE_NAME = 'groveld-' + cacheHash;
 const urlsToCache = ['/?utm_source=homescreen','/','/static/images/logo.png','/404'];
 
@@ -27,17 +27,4 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request).then(function(response) {
-        let clone = response.clone();
-        caches.open(cacheName).then(function(cache) {
-          cache.put(event.request, clone);
-        });
-        return response;
-      });
-    }).catch(function() {
-      return caches.match('/404');
-    })
-  );
 });
