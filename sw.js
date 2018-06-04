@@ -1,7 +1,7 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528105494';
-const urlsToCache = ['/','/?utm_source=homescreen'];
+const CACHE_NAME = 'groveld-1528108973';
+const urlsToCache = ['/','/?utm_source=homescreen','/404','/offline','https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'];
 
 self.addEventListener('install', function(event) {
   self.skipWaiting();
@@ -31,6 +31,10 @@ self.addEventListener('fetch', function(event) {
         return response || fetch(event.request).then(function(response) {
           cache.put(event.request, response.clone());
           return response;
+        })
+        .catch(function() {
+          // If both fail, show a generic fallback:
+          return caches.match('/offline');
         });
       });
     })
