@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'groveld-1528117665';
+const CACHE_NAME = 'groveld-1528118180';
 const urlsToCache = ['/?utm_source=homescreen','/sw.js','/manifest.json','/offline'];
 
 self.addEventListener('install', function(event) {
