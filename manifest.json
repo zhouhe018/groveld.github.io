@@ -5,12 +5,12 @@
   "default_locale": "en",
   "icons": [
     {
-      "src": "/assets/icons/android-chrome-192x192-f667f637515c0950b576034237a62c28f0cf01b7b9ba4c29d613338f1181b24c.png",
+      "src": "/assets/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/icons/android-chrome-512x512-f4874b0c1b8846d77df321d8b5205da623945473579adc0d012a3f824167bfda.png",
+      "src": "/assets/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

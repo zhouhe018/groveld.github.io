@@ -4,7 +4,7 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2018-06-05T23:04:34+00:00</updated>
+  <updated>2018-06-05T23:11:10+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>groveld</name>
@@ -28,7 +28,7 @@
 &lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
 &lt;p&gt;What we are doing here is mostly collecting useful snippets from all over the interwebs (for example, a good chunk is from &lt;a href=&quot;https://github.com/h5bp/server-configs-apache&quot;&gt;Apache Server Configs&lt;/a&gt;) into one place. While we’ve been trying to credit where due, things might be missing. If you believe anything here is your work and credits should be given, let us know, or just send a PR.&lt;/p&gt;
 
-&lt;p&gt;&lt;img width=&quot;100%&quot; alt=&quot;pretty snail&quot; src=&quot;/assets/images/snail-ec4272ed23377f3ae69984a4c10dd2c118c1dc08fb5b439b1df33a79ff207a02.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img width=&quot;100%&quot; alt=&quot;pretty snail&quot; src=&quot;/assets/images/snail.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;rewrite-and-redirection&quot;&gt;Rewrite and Redirection&lt;/h2&gt;
 &lt;p&gt;Note: It is assumed that you have &lt;code class=&quot;highlighter-rouge&quot;&gt;mod_rewrite&lt;/code&gt; installed and enabled.&lt;/p&gt;
