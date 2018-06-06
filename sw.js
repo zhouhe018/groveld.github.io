@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheVersion = '1528299404::';
+const cacheVersion = '1528316673::';
 const urlsToCache = [
   '/?utm_source=homescreen',
   '/404','/about','/atom.xml','/blog','/browserconfig.xml','/contact','/legal/cookies','/','/manifest.json','/legal/privacy','/robots.txt','/sitemap.xml','/sw.js','/legal/terms',
@@ -8,16 +8,15 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-  self.skipWaiting();
   event.waitUntil(
     caches.open(cacheVersion + 'static').then(function(cache) {
       return cache.addAll(urlsToCache);
     })
   );
+  return self.skipWaiting();
 });
 
 self.addEventListener('activate', function(event) {
-  self.clients.claim();
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
@@ -29,6 +28,7 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
+  return self.clients.claim();
 });
 
 self.addEventListener('fetch', function(event) {
