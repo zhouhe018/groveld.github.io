@@ -1,6 +1,6 @@
 'use strict';
 
-const cacheVersion = '1535145983::';
+const cacheVersion = '34095fdbd04e82ead08b5b817a05baff3e8cf898::';
 const urlsToCache = [
   '/404','/about','/articles/','/atom.xml','/browserconfig.xml','/contact','/terms/cookies','/','/manifest.json','/terms/privacy','/robots.txt','/sitemap.xml','/sw.js','/terms/',
   '/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make',
