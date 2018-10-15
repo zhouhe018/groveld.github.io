@@ -4,13 +4,69 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2018-09-19T11:03:26+00:00</updated>
+  <updated>2018-10-15T17:45:13+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>Martin Groeneveld</name>
     <email>martin@groveld.com</email>
   </author>
   <rights type="text">Copyright (c) 2018, Martin Groeneveld; all rights reserved.</rights>
+  
+  <entry>
+    <id>https://www.groveld.com/articles/group-policy-processing</id>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/group-policy-processing"/>
+    <title>Understanding Group Policy Processing</title>
+    <author>
+      <name>groveld</name>
+      <email>martin@groveld.com</email>
+    </author>
+    <published>2018-10-09T00:00:00+00:00</published>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Group Policy Processing&lt;/strong&gt;: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.&lt;/p&gt;
+
+&lt;p&gt;Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; are created in Active Directory and linked to container objects. Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; can be linked to Active Directory sites, domains, or OUs. They cannot be linked to built-in containers, such as the default Users, Builtin, or Computer containers. These containers can receive policies only through domain or site-linked policies that flow down to all objects within them.&lt;/p&gt;
+
+&lt;h2 id=&quot;understating-group-policy-processing&quot;&gt;Understating Group Policy Processing&lt;/h2&gt;
+
+&lt;p&gt;Policies affect the containers to which they are linked in the following ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Site-linked policies affect all domains within a site.&lt;/li&gt;
+  &lt;li&gt;Domain-linked policies affect all users and computers within a domain and within any containers within a domain. This includes objects in built-in containers, as well as objects within OUs and sub-OUs within the domain structure.&lt;/li&gt;
+  &lt;li&gt;OU-linked policies affect all objects within the OU and any other OU structure nested within them.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To begin, policies are processed in the following order, typically referred as &lt;strong&gt;LSDOU&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Local Policies&lt;/li&gt;
+  &lt;li&gt;Site policies&lt;/li&gt;
+  &lt;li&gt;Domain policies&lt;/li&gt;
+  &lt;li&gt;OU policies&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Following the order of processing from steps 1 to 4, the settings in the policies that are processed last, that is, those that are assigned to an OU in step 4, override any conflicting settings in the policies that were processed in the previous steps.&lt;/p&gt;
+
+&lt;p&gt;For example, suppose you have a policy setting that is applied to the site and affects all domains and their contents. If you have modified the same settings to produce a different result in an OU policy, the OU policy settings prevail. This behavior is intentional and provides administrators with flexibility in Group Policy application. In addition, as policies are applied, each container inherits the settings of the parent container policies by default.&lt;/p&gt;
+
+&lt;p&gt;Domains, sites, and OUs can have multiple group policies linked to them. Expanding on the previous example, you might have more than one policy linked to the Education department’s OU. In this situation, the top GPO in the list is processed last. When multiple &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; are linked to a container, the first GPO in the list has the highest priority. In other words, by default, the list of linked &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; is processed from the bottom to the top.&lt;/p&gt;
+
+&lt;p&gt;Policies can be applied to containers and the user and computer objects that reside in them. Computer configuration settings are processed when a computer starts, followed by &lt;strong&gt;User Configuration settings&lt;/strong&gt;, which are processed during user login. Computer startup scripts and user logon scripts can run during startup. In addition, user logoff scripts and computer shutdown scripts can run during shutdown.&lt;/p&gt;
+
+&lt;p&gt;The following steps describe the process of implementing the settings of the assigned &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; for a computer and user:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When a computer is initializing during startup, it establishes a secure link between the computer and a domain controller. Then, the computer objects a list of &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; to be applied.&lt;/li&gt;
+  &lt;li&gt;Computer configuration settings are applied synchronously during computer startup before the logon dialog box is presented to the user. Synchronous processing of policies means that each policy must be read and applied completely before the next policy can be invoked. The default synchronous behavior can be modified by the system administrator if necessary, although such modification is discouraged. No user interface is displayed during this process with the exception of a startup dialog box indication that policies are being applied. The policies are read and applied in the LSDOU sequence described earlier.&lt;/li&gt;
+  &lt;li&gt;Any startup scripts set to run during computer startup are processed. These scripts also run synchronously and have a default timeout of 600 seconds to complete. This process is hidden from the user.&lt;/li&gt;
+  &lt;li&gt;When the computer configuration scripts and startup scripts are complete, the user is prompted to press &lt;em&gt;Ctrl + Alt + Del&lt;/em&gt; to log on.&lt;/li&gt;
+  &lt;li&gt;Upon successful authentication, the user profile is loaded, based on the Group Policy settings in effect.&lt;/li&gt;
+  &lt;li&gt;A list of &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; specific for the user is obtained from the domain controller. User configuration settings also are processed in the LSDOU sequence. The GPO processing is again transparent to the user, and the policies are processed synchronously.&lt;/li&gt;
+  &lt;li&gt;After the user policies run, any logon scripts run. These scripts, unlike the startup scripts, run asynchronously by default. Asynchronously processing allows multiple scripts to be processed at the same time, without waiting for the outcome of a previously launched script to occur. However, the user object script runs last.&lt;/li&gt;
+  &lt;li&gt;The user’s desktop appears after all policies and scripts have been processed.&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+  </entry>
   
   <entry>
     <id>https://www.groveld.com/articles/htaccess-snippets</id>
@@ -616,6 +672,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;p&gt;We now have a user called “git” that will handle gitolite configuration. We need to be able to access this user from a normal account. We will do this by configuring an SSH key associated with git administration.&lt;/p&gt;
 
 &lt;h2 id=&quot;configure-ssh-keys-for-git-administration&quot;&gt;Configure SSH Keys for Git Administration&lt;/h2&gt;
+
 &lt;p&gt;On your &lt;strong&gt;local computer&lt;/strong&gt;, which you will be using to administer git and gitolite, you need to create an SSH key pair if you have not done so already.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you already have a key pair created, you should skip this command to avoid overwriting your SSH keys.&lt;/em&gt;&lt;/p&gt;
@@ -636,6 +693,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;configure-gitolite&quot;&gt;Configure Gitolite&lt;/h2&gt;
+
 &lt;p&gt;The next steps will take place back on our git server. Log back in with your normal user.&lt;/p&gt;
 
 &lt;p&gt;We can log in with our “git” user to initialize gitolite with the public key we just transferred.&lt;/p&gt;
@@ -653,6 +711,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;p&gt;When you are finished, save and exit out of the file.&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-administer-gitolite&quot;&gt;How To Administer Gitolite&lt;/h2&gt;
+
 &lt;p&gt;Back on your &lt;strong&gt;local&lt;/strong&gt; computer, you can begin administering gitolite.&lt;/p&gt;
 
 &lt;p&gt;If you do not already have git installed on this computer, you need to install it with:&lt;/p&gt;
@@ -668,6 +727,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;p&gt;This will create a new directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;gitolite-admin&lt;/code&gt; within your current directory. Here, we can make changes to our access policies and then push those changes to the git server.&lt;/p&gt;
 
 &lt;h2 id=&quot;add-new-users-to-gitolite&quot;&gt;Add New Users to Gitolite&lt;/h2&gt;
+
 &lt;p&gt;To add users to your projects, you will need their public keys. Gitolite works by associating the username that will be signing in with the public key with the same name. We will pretend we have a user called &lt;code class=&quot;highlighter-rouge&quot;&gt;john&lt;/code&gt; for this demonstration.&lt;/p&gt;
 
 &lt;p&gt;On the local machine, we can change into the &lt;code class=&quot;highlighter-rouge&quot;&gt;gitolite-admin&lt;/code&gt; directory and see what is inside:&lt;/p&gt;
@@ -715,6 +775,7 @@ git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email &lt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;configure-access-with-gitolite&quot;&gt;Configure Access with Gitolite&lt;/h2&gt;
+
 &lt;p&gt;When you added the user in the last section, you may have noticed a warning like this:&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;remote:
@@ -785,6 +846,7 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
 &lt;p&gt;You should now have gitolite configured correctly. You should be able to create git users easily without worrying about configuring accompanying operating system users and permissions every time.&lt;/p&gt;
 
 &lt;p&gt;If you are managing multiple projects with diverse teams, it is probably best to set up groups that correspond to projects. It might also be helpful to organize your &lt;code class=&quot;highlighter-rouge&quot;&gt;keydir&lt;/code&gt; keys into subdirectories based on project. Gitolite will use them the same way, but they will be easier to find for administrative purposes.&lt;/p&gt;

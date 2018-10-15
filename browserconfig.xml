@@ -2,11 +2,11 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square70x70logo src="/assets/images/icons/small.jpg"/>
-      <square150x150logo src="/assets/images/icons/medium.jpg"/>
-      <wide310x150logo src="/assets/images/icons/wide.jpg"/>
-      <square310x310logo src="/assets/images/icons/large.jpg"/>
-      <TileColor>#343a40</TileColor>
+      <square70x70logo src="/images/icons/small.jpg"/>
+      <square150x150logo src="/images/icons/medium.jpg"/>
+      <wide310x150logo src="/images/icons/wide.jpg"/>
+      <square310x310logo src="/images/icons/large.jpg"/>
+      <TileColor>#1e88e5</TileColor>
     </tile>
   </msapplication>
 </browserconfig>
