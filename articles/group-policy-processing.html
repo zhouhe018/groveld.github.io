@@ -26,7 +26,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="/1affc3da094d8e3fd76429df77bfd4e5d811afd3.css">
+  <link rel="stylesheet" href="/66462fc2566687a7cd3e1b8681d1a7991b136d5c.css">
 </head>
 <body>
 
@@ -64,7 +64,6 @@
   <div class="row">
     <div class="col">
 
-      <!-- <h1>Understanding Group Policy Processing</h1> -->
       <p><strong>Group Policy Processing</strong>: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.</p>
 
 <p>Nonlocal <a href="https://en.wikipedia.org/wiki/Group_Policy">GPOs</a> are created in Active Directory and linked to container objects. Nonlocal <a href="https://en.wikipedia.org/wiki/Group_Policy">GPOs</a> can be linked to Active Directory sites, domains, or OUs. They cannot be linked to built-in containers, such as the default Users, Builtin, or Computer containers. These containers can receive policies only through domain or site-linked policies that flow down to all objects within them.</p>
@@ -115,6 +114,17 @@
   </div>
 
   
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary btn-lg btn-block mb-3" id="show-comments">Show Comments</button>
+      <div id="comments" class="card card-mobile mb-3">
+        <div class="card-body">
+          <div id="disqus_thread"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 </div>
 
@@ -133,13 +143,13 @@
   </footer>
 
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47976921-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'UA-47976921-1');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47976921-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
 
@@ -148,7 +158,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="/vhfix.js"></script>
-  <script src="/1affc3da094d8e3fd76429df77bfd4e5d811afd3.js"></script>
+  <script src="/66462fc2566687a7cd3e1b8681d1a7991b136d5c.js"></script>
 
 </body>
 </html>
