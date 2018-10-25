@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- meta info -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="format-detection" content="telephone=no">
-  <!-- favicon and webapp behaviour -->
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1e88e5">
@@ -15,27 +13,26 @@
   <meta name="apple-mobile-web-app-title" content="Groveld">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
   <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#1e88e5">
-  <!-- site info -->
   <meta name="description" content="Understanding Group Policy Processing in Active Directory Domain Services">
   <meta name="author" content="groveld">
   <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="/atom.xml">
   <link rel="canonical" href="https://www.groveld.com/articles/group-policy-processing">
   <title>Understanding Group Policy Processing - Martin Groeneveld</title>
-  <!-- Bootstrap CSS and Custom CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/3712b2ac6861f6e6663ed367fc1f674ed0e54f06.css">
+  <link rel="stylesheet" href="/css/199f90573ff0eae7d223dbb6a4240f6921db10d0.css">
   <link rel="stylesheet" href="/css/syntax.css">
 </head>
 <body>
 
   
 <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-  <!-- <div class="container-fluid"> -->
-  <a class="navbar-brand" href="/">
-    <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="logo">
-    <span style="font-weight: 200;">Martin</span> Groeneveld
-  </a>
+  <span class="navbar-brand mb-0 h1">
+    <a class="d-inline-block mr-1" href="/">
+      <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+    </a>
+    Martin Groeneveld
+  </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -44,14 +41,12 @@
       <a class="nav-item nav-link" href="/">Home</a>
       <a class="nav-item nav-link active" href="/articles/">Articles</a>
       <a class="nav-item nav-link" href="/about">About</a>
-      <!-- <a class="nav-item nav-link" href="/contact">Contact</a> -->
     </div>
   </div>
-  <!-- </div> -->
 </nav>
 
 
-<header class="navbar-offset mb-4">
+<header>
   <div class="container-fluid py-5">
     <h1 class="my-0">Understanding Group Policy Processing</h1>
   </div>
@@ -59,11 +54,12 @@
 
 
 
-  <div class="container-fluid">
-  <div class="row">
-    <div class="col text-justify">
+<main>
+  <div class="container-fluid mt-4 mb-2">
+    <div class="row">
+      <div class="col text-justify">
 
-      <p><strong>Group Policy Processing</strong>: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.</p>
+        <p><strong>Group Policy Processing</strong>: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.</p>
 
 <p>Nonlocal <a href="https://en.wikipedia.org/wiki/Group_Policy">GPOs</a> are created in Active Directory and linked to container objects. Nonlocal <a href="https://en.wikipedia.org/wiki/Group_Policy">GPOs</a> can be linked to Active Directory sites, domains, or OUs. They cannot be linked to built-in containers, such as the default Users, Builtin, or Computer containers. These containers can receive policies only through domain or site-linked policies that flow down to all objects within them.</p>
 
@@ -109,42 +105,34 @@
 
 
 
+      </div>
     </div>
   </div>
-</div>
+</main>
+
+<footer>
+  <div class="container-fluid">
+    <p class="small text-center my-0">&copy; 2018 Martin Groeneveld &bull; <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a></p>
+  </div>
+</footer>
 
 
-  <!-- Footer -->
-  <!-- <footer class="py-3"> -->
-    <!-- <div class="container-fluid"> -->
-      <!-- <div class="row"> -->
-        <!-- <div class="col"> -->
-          <!-- <div class="small text-center"> -->
-            <!-- &copy; 2018 Martin Groeneveld &bull; <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a> -->
-          <!-- </div> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </footer> -->
 
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47976921-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-47976921-1');
-</script>
-
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47976921-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-47976921-1');
+  </script>
+  
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="/js/vh-fix.js"></script>
-  <script src="/js/3712b2ac6861f6e6663ed367fc1f674ed0e54f06.js"></script>
+  <script src="/js/199f90573ff0eae7d223dbb6a4240f6921db10d0.js"></script>
 
 </body>
 </html>
