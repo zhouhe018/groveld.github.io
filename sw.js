@@ -1,7 +1,7 @@
 'use strict';
 
-const cacheVersion = '87879b1::';
-const urlsToCache = ['/404','/about','/archive','/atom.xml','/browserconfig.xml','/','/css/main.87879b1.css','/js/main.87879b1.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/js/vhfix.87879b1.js','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
+const cacheVersion = 'bfabc30::';
+const urlsToCache = ['/404','/about','/archive','/atom.xml','/browserconfig.xml','/','/css/main.bfabc30.css','/js/main.bfabc30.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/js/vhfix.bfabc30.js','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
