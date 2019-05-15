@@ -1,8 +1,9 @@
 'use strict';
 
-const cacheVersion = '8533007::';
-const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/','/css/main.8533007.css','/js/main.8533007.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/articles/edgerouter-ziggo-config','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
+const cacheVersion = 'bb4cf7e::';
+const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/','/css/main.bb4cf7e.css','/js/main.bb4cf7e.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/articles/edgerouter-ziggo-config','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
 
+// The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(cacheVersion + 'static').then(function (cache) {
@@ -12,6 +13,7 @@ self.addEventListener('install', function (event) {
   return self.skipWaiting();
 });
 
+// The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
