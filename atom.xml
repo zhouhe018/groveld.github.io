@@ -4,13 +4,41 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2019-04-21T16:41:02+00:00</updated>
+  <updated>2019-05-15T10:06:50+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>Martin Groeneveld</name>
     <email>martin@groveld.com</email>
   </author>
   <rights type="text">Copyright (c) 2019, Martin Groeneveld; all rights reserved.</rights>
+  
+  <entry>
+    <id>https://www.groveld.com/articles/edgerouter-ziggo-config</id>
+    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/edgerouter-ziggo-config"/>
+    <title>EdgeRouter 4 Setup Ziggo Dual WAN</title>
+    <author>
+      <name>Martin Groeneveld</name>
+      <email>martin@groveld.com</email>
+    </author>
+    <published>2019-02-28T00:00:00+00:00</published>
+    <content type="html">&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;configure
+
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;system offload ipv4 forwarding &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv4 gre &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv4 pppoe &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv4 vlan &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv4 bonding &lt;span class=&quot;nb&quot;&gt;enable
+
+set &lt;/span&gt;system offload ipv6 forwarding &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv6 pppoe &lt;span class=&quot;nb&quot;&gt;enable
+set &lt;/span&gt;system offload ipv6 vlan &lt;span class=&quot;nb&quot;&gt;enable
+
+set &lt;/span&gt;system offload ipsec &lt;span class=&quot;nb&quot;&gt;enable
+
+&lt;/span&gt;commit &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; save
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
   
   <entry>
     <id>https://www.groveld.com/articles/group-policy-processing</id>

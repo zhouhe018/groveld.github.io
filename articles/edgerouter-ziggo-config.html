@@ -20,11 +20,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#f00">
 
-  <meta name="description" content="About the author of this blog">
+  <meta name="description" content="EdgeRouter 4 Setup Ziggo Dual WAN">
   <meta name="author" content="Martin Groeneveld">
   <link rel="alternate" type="application/atom+xml" title="Martin Groeneveld" href="/atom.xml">
-  <link rel="canonical" href="https://www.groveld.com/about">
-  <title>About the author of this blog - Martin Groeneveld</title>
+  <link rel="canonical" href="https://www.groveld.com/articles/edgerouter-ziggo-config">
+  <title>EdgeRouter 4 Setup Ziggo Dual WAN - Martin Groeneveld</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -46,8 +46,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar">
     <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link" href="/">Home</a>
-      <a class="nav-item nav-link active" href="/about">About</a>
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/about">About</a>
     </div>
   </div>
   <progress id="reading-progress"></progress>
@@ -56,34 +56,47 @@
 
 <main>
 
-  <div class="container-fluid mb-5">
+  <div class="container-fluid mb-3 mb-lg-5">
     <div class="row">
       <div class="col">
 
         
         <header>
           <div class="container-fluid text-center py-3 py-lg-5">
-            <h1 class="m-0">About the author of this blog</h1>
+            <h1 class="m-0">EdgeRouter 4 Setup Ziggo Dual WAN</h1>
+            <p class="text-muted m-0">February 28, 2019 - Martin Groeneveld</p>
           </div>
         </header>
         
 
-        <p>Hi! My name is Martin Groeneveld. I’m a hacker, a maker, a tinkerer and a learner. I’ve been working in and around web technologies and electronics design since 2006, and love every day of it.</p>
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>configure
 
-<p>Apart from programming and hacking for fun, I’m a professional DevOps, a mix of a Software Developer and a System Administrator, experienced in development of high performance and high availability platforms.</p>
+<span class="nb">set </span>system offload ipv4 forwarding <span class="nb">enable
+set </span>system offload ipv4 gre <span class="nb">enable
+set </span>system offload ipv4 pppoe <span class="nb">enable
+set </span>system offload ipv4 vlan <span class="nb">enable
+set </span>system offload ipv4 bonding <span class="nb">enable
 
-<p>From time to time, when an interesting offer comes along, I do freelance jobs. If you have something I can help you with, please <a href="/about">contact me</a>.</p>
+set </span>system offload ipv6 forwarding <span class="nb">enable
+set </span>system offload ipv6 pppoe <span class="nb">enable
+set </span>system offload ipv6 vlan <span class="nb">enable
 
-<h2 id="about-this-website">About This Website</h2>
+set </span>system offload ipsec <span class="nb">enable
 
-<p>Rather than relying on a complex content management system to serve content, this website is built with <a href="http://jekyllrb.com/">Jekyll</a>, a “simple, blog aware, static site generator” written in <a href="https://www.ruby-lang.org/en/">Ruby</a>. As a purely static site, no server-side processing is necessary after the site is initially built.</p>
-
-<p>Much of the content is formatted with <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, which gets converted into HTML when the site is built. This makes it easy to add content to the site without any HTML experience, while avoiding the complexity of using a CMS with a WYSIWYG page editor.</p>
+</span>commit <span class="p">;</span> save
+</code></pre></div></div>
 
 
       </div>
     </div>
   </div>
+
+  <!-- <div class="post-nav">
+    
+      <a class="prev-post" href="/articles/group-policy-processing">&laquo; Understanding Group Policy Processing</a>
+    
+    
+  </div> -->
 
 </main>
 
