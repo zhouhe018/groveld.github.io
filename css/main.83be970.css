@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:hover, a:active {
-  color: #db0045;
+  color: #cc0041;
 }
 
 main {
@@ -138,7 +138,7 @@ header {
 
 .post-nav a:hover {
   color: #ffffff;
-  background-color: #db0045;
+  background-color: #cc0041;
 }
 
 footer {
