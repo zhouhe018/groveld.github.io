@@ -1,7 +1,7 @@
 'use strict';
 
-const cacheVersion = '3042f94::';
-const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/','/css/main.3042f94.css','/js/main.3042f94.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/articles/edgerouter-ziggo-config','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
+const cacheVersion = 'e229038::';
+const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/','/css/main.e229038.css','/js/main.e229038.js','/manifest.json','/privacy','/robots.txt','/sitemap.xml','/terms','/articles/edgerouter-ziggo-config','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', function (event) {
