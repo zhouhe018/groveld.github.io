@@ -4,64 +4,13 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2019-08-14T07:55:25+00:00</updated>
+  <updated>2019-08-14T07:59:09+00:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>Martin Groeneveld</name>
     <email>martin@groveld.com</email>
   </author>
   <rights type="text">Copyright (c) 2019, Martin Groeneveld; all rights reserved.</rights>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/edgerouter-ziggo-config</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/edgerouter-ziggo-config"/>
-    <title>EdgeRouter 4 Setup Ziggo Dual WAN</title>
-    <author>
-      <name>Martin Groeneveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2019-02-28T00:00:00+00:00</published>
-    <content type="html">&lt;pre&gt;&lt;code class=&quot;language-math&quot;&gt;\displaystyle
-\left( \sum\_{k=1}^n a\_k b\_k \right)^2
-\leq
-\left( \sum\_{k=1}^n a\_k^2 \right)
-\left( \sum\_{k=1}^n b\_k^2 \right)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-katex&quot;&gt;\displaystyle 
-    \frac{1}{
-        \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{
-        \frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {
-        1+\frac{e^{-6\pi}}
-        {1+\frac{e^{-8\pi}}
-         {1+\cdots} }
-        } 
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f(x) = &lt;span class=&quot;k&quot;&gt;\int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;_{&lt;/span&gt;-&lt;span class=&quot;k&quot;&gt;\infty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\infty&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\hat&lt;/span&gt; f(&lt;span class=&quot;k&quot;&gt;\xi&lt;/span&gt;)&lt;span class=&quot;k&quot;&gt;\,&lt;/span&gt;e&lt;span class=&quot;p&quot;&gt;^{&lt;/span&gt;2 &lt;span class=&quot;k&quot;&gt;\pi&lt;/span&gt; i &lt;span class=&quot;k&quot;&gt;\xi&lt;/span&gt; x&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\,&lt;/span&gt;d&lt;span class=&quot;k&quot;&gt;\xi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;configure
-
-&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;system offload ipv4 forwarding &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv4 gre &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv4 pppoe &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv4 vlan &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv4 bonding &lt;span class=&quot;nb&quot;&gt;enable
-
-set &lt;/span&gt;system offload ipv6 forwarding &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv6 pppoe &lt;span class=&quot;nb&quot;&gt;enable
-set &lt;/span&gt;system offload ipv6 vlan &lt;span class=&quot;nb&quot;&gt;enable
-
-set &lt;/span&gt;system offload ipsec &lt;span class=&quot;nb&quot;&gt;enable
-
-&lt;/span&gt;commit &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; save
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
-  </entry>
   
   <entry>
     <id>https://www.groveld.com/articles/group-policy-processing</id>
