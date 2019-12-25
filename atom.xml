@@ -4,7 +4,7 @@
   <title type="text" xml:lang="en">Martin Groeneveld</title>
   <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
   <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2019-12-25T18:58:20+00:00</updated>
+  <updated>2019-12-25T21:30:39+01:00</updated>
   <id>https://www.groveld.com/</id>
   <author>
     <name>Martin Groeneveld</name>
@@ -20,8 +20,8 @@
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2018-10-09T00:00:00+00:00</published>
-    <updated>2018-10-09T00:00:00+00:00</updated>
+    <published>2018-10-09T00:00:00+02:00</published>
+    <updated>2018-10-09T00:00:00+02:00</updated>
     <content type="html">&lt;p&gt;&lt;strong&gt;Group Policy Processing&lt;/strong&gt;: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.&lt;/p&gt;
 
 &lt;p&gt;Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; are created in Active Directory and linked to container objects. Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; can be linked to Active Directory sites, domains, or OUs. They cannot be linked to built-in containers, such as the default Users, Builtin, or Computer containers. These containers can receive policies only through domain or site-linked policies that flow down to all objects within them.&lt;/p&gt;
@@ -77,8 +77,8 @@
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2015-09-06T00:00:00+00:00</published>
-    <updated>2015-09-06T00:00:00+00:00</updated>
+    <published>2015-09-06T00:00:00+02:00</published>
+    <updated>2015-09-06T00:00:00+02:00</updated>
     <content type="html">&lt;div class=&quot;alert alert-warning&quot;&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; While dropping the snippet into an &quot;.htaccess&quot; file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.&lt;/div&gt;
 
 &lt;div class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Important:&lt;/strong&gt; Apache 2.4 introduces a few breaking changes, most notably in access control configuration. For more information, check the &lt;a href=&quot;https://httpd.apache.org/docs/2.4/upgrading.html&quot;&gt;upgrading document&lt;/a&gt; as well as &lt;a href=&quot;https://github.com/phanan/htaccess/issues/2&quot;&gt;this issue&lt;/a&gt;.&lt;/div&gt;
@@ -541,8 +541,8 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2015-01-16T00:00:00+00:00</published>
-    <updated>2015-01-16T00:00:00+00:00</updated>
+    <published>2015-01-16T00:00:00+01:00</published>
+    <updated>2015-01-16T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.&lt;/p&gt;
 
 &lt;h2 id=&quot;redirect-non-www-to-www&quot;&gt;Redirect non-www to WWW&lt;/h2&gt;
@@ -591,8 +591,8 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2015-01-10T00:00:00+00:00</published>
-    <updated>2015-01-10T00:00:00+00:00</updated>
+    <published>2015-01-10T00:00:00+01:00</published>
+    <updated>2015-01-10T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;Tutorial showing you how to give an Ubuntu user the right to edit and add files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www&lt;/code&gt; folders.&lt;/p&gt;
 
 &lt;p&gt;Add the www-data group to an existing user&lt;/p&gt;
@@ -639,8 +639,8 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2015-01-09T00:00:00+00:00</published>
-    <updated>2015-01-09T00:00:00+00:00</updated>
+    <published>2015-01-09T00:00:00+01:00</published>
+    <updated>2015-01-09T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;Git is a great distributed version control system that can be used to keep track of changes and code for any kind of project. Sometimes, it is helpful to configure a git server to house your team’s projects.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Gitolite&lt;/strong&gt; provides an access-control layer for a git server, so that you can configure user-based git access without the accompanying operating system user accounts. This provides your git contributors the privileges they need, without exposing your server to other kinds of interaction.&lt;/p&gt;
@@ -866,8 +866,8 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2014-03-15T00:00:00+00:00</published>
-    <updated>2014-03-15T00:00:00+00:00</updated>
+    <published>2014-03-15T00:00:00+01:00</published>
+    <updated>2014-03-15T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.&lt;/p&gt;
 
 &lt;p&gt;Designing 3D printed cookie cutters, making your own soap, milling furniture, from adjusting the colours of your living room lights to match the film you’re watching to checking how secure Whatsapp really is. It’s all possible in a hackerspace.&lt;/p&gt;
@@ -911,8 +911,8 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2014-02-15T00:00:00+00:00</published>
-    <updated>2014-02-15T00:00:00+00:00</updated>
+    <published>2014-02-15T00:00:00+01:00</published>
+    <updated>2014-02-15T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.&lt;/p&gt;
 
 &lt;p&gt;In this guide, we will discuss how GPG works and how to implement it. We will be using an Ubuntu 12.04 VPS for this demonstration, but the tools are available on any modern Linux distribution.&lt;/p&gt;
@@ -1178,8 +1178,8 @@ sub   4096R/8822A56A 2013-10-04
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2014-02-08T00:00:00+00:00</published>
-    <updated>2014-02-08T00:00:00+00:00</updated>
+    <published>2014-02-08T00:00:00+01:00</published>
+    <updated>2014-02-08T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAP services.&lt;/p&gt;
 
 &lt;p&gt;Once installed and configured, you can easily create your own admin system to modifiy the domains and users because the table structure is very simple.&lt;/p&gt;
@@ -1408,8 +1408,8 @@ postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2014-02-01T00:00:00+00:00</published>
-    <updated>2014-02-01T00:00:00+00:00</updated>
+    <published>2014-02-01T00:00:00+01:00</published>
+    <updated>2014-02-01T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes &lt;strong&gt;not&lt;/strong&gt; having a slash at the end of the urls. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;groveld.com/about&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;To view options available when setting the permalink structure of posts in jekyll, you can take a look at the &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;documentation&lt;/a&gt;, but for our purpose, it’s so simple and you might have already guessed it without looking at the docs: &lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /:title&lt;/code&gt;&lt;/p&gt;
@@ -1450,8 +1450,8 @@ RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
       <name>groveld</name>
       <email>martin@groveld.com</email>
     </author>
-    <published>2014-01-18T00:00:00+00:00</published>
-    <updated>2014-01-18T00:00:00+00:00</updated>
+    <published>2014-01-18T00:00:00+01:00</published>
+    <updated>2014-01-18T00:00:00+01:00</updated>
     <content type="html">&lt;p&gt;I once mentioned it to a classmate that I use GNU/Linux as the only Operating System at home, and he replied in shock, “That’s used by &lt;em&gt;Hackers&lt;/em&gt;? Right?”
 That is true. Almost everyone who calls himself/herself a Hacker uses it, but the fear on his face suggested that he meant to say &lt;em&gt;Crackers&lt;/em&gt;.
 Noooo! Linux users aren’t &lt;em&gt;Crackers&lt;/em&gt;. That would be similar to saying that everyone who owns a slide hammer, is a car thief!&lt;/p&gt;
