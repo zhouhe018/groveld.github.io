@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title type="text" xml:lang="en">Martin Groeneveld</title>
-  <link rel="self" type="application/atom+xml" href="https://www.groveld.com/atom.xml"/>
-  <link rel="alternate" href="https://www.groveld.com/"/>
-  <updated>2019-12-26T13:50:23+01:00</updated>
-  <id>https://www.groveld.com/</id>
-  <author>
-    <name>Martin Groeneveld</name>
-    <email>martin@groveld.com</email>
-  </author>
-  <rights type="text">Copyright (c) 2019, Martin Groeneveld; all rights reserved.</rights>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/group-policy-processing</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/group-policy-processing"/>
-    <title>Understanding Group Policy Processing</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2018-10-09T00:00:00+02:00</published>
-    <updated>2018-10-09T00:00:00+02:00</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Group Policy Processing&lt;/strong&gt;: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.&lt;/p&gt;
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Martin Groeneveld",
+  "home_page_url": "https://www.groveld.com/",
+  "feed_url": "https://www.groveld.com/feed.json",
+  "items": [
+    
+    {
+      "id": "https://www.groveld.com/articles/group-policy-processing",
+      "url": "https://www.groveld.com/articles/group-policy-processing",
+      "title": "Understanding Group Policy Processing",
+      "content_html": "&lt;p&gt;&lt;strong&gt;Group Policy Processing&lt;/strong&gt;: You can have local policies, site policies, domain policies, and OU policies within your domain structure. To learn how to best implement Group Policies to serve the organization, you need to understand the order in which the policies are applied.&lt;/p&gt;
 
 &lt;p&gt;Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; are created in Active Directory and linked to container objects. Nonlocal &lt;a href=&quot;https://en.wikipedia.org/wiki/Group_Policy&quot;&gt;GPOs&lt;/a&gt; can be linked to Active Directory sites, domains, or OUs. They cannot be linked to built-in containers, such as the default Users, Builtin, or Computer containers. These containers can receive policies only through domain or site-linked policies that flow down to all objects within them.&lt;/p&gt;
 
@@ -66,20 +53,20 @@
   &lt;li&gt;The user’s desktop appears after all policies and scripts have been processed.&lt;/li&gt;
 &lt;/ol&gt;
 
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/htaccess-snippets</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/htaccess-snippets"/>
-    <title>A collection of useful .htaccess snippets</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2015-09-06T00:00:00+02:00</published>
-    <updated>2015-09-06T00:00:00+02:00</updated>
-    <content type="html">&lt;div class=&quot;alert alert-warning&quot;&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; While dropping the snippet into an &quot;.htaccess&quot; file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.&lt;/div&gt;
+",
+      "date_published": "2018-10-09T00:00:00+02:00",
+      "date_modified": "2018-10-09T00:00:00+02:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/htaccess-snippets",
+      "url": "https://www.groveld.com/articles/htaccess-snippets",
+      "title": "A collection of useful .htaccess snippets",
+      "content_html": "&lt;div class=&quot;alert alert-warning&quot;&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; While dropping the snippet into an &quot;.htaccess&quot; file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.&lt;/div&gt;
 
 &lt;div class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Important:&lt;/strong&gt; Apache 2.4 introduces a few breaking changes, most notably in access control configuration. For more information, check the &lt;a href=&quot;https://httpd.apache.org/docs/2.4/upgrading.html&quot;&gt;upgrading document&lt;/a&gt; as well as &lt;a href=&quot;https://github.com/phanan/htaccess/issues/2&quot;&gt;this issue&lt;/a&gt;.&lt;/div&gt;
 
@@ -530,20 +517,20 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/vincentorback/WebP-images-with-htaccess&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/www-non-www-redirection</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/www-non-www-redirection"/>
-    <title>Nginx config for www and non-www redirection</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2015-01-16T00:00:00+01:00</published>
-    <updated>2015-01-16T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.&lt;/p&gt;
+",
+      "date_published": "2015-09-06T00:00:00+02:00",
+      "date_modified": "2015-09-06T00:00:00+02:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/www-non-www-redirection",
+      "url": "https://www.groveld.com/articles/www-non-www-redirection",
+      "title": "Nginx config for www and non-www redirection",
+      "content_html": "&lt;p&gt;There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.&lt;/p&gt;
 
 &lt;h2 id=&quot;redirect-non-www-to-www&quot;&gt;Redirect non-www to WWW&lt;/h2&gt;
 
@@ -580,20 +567,20 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 &lt;p&gt;In both cases, for other-www, we create a altogether different server { } block. IMHO, this is cleanest and optimised way to handle www to non-www and non-www to www redirection.&lt;/p&gt;
 
 &lt;p&gt;There are some WordPress plugins available there which can handle this at PHP-level. But for performance reason, always handle things in Nginx, that can be handled in Nginx alone!&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www"/>
-    <title>Give user permission to edit and add files in /var/www</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2015-01-10T00:00:00+01:00</published>
-    <updated>2015-01-10T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;Tutorial showing you how to give an Ubuntu user the right to edit and add files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www&lt;/code&gt; folders.&lt;/p&gt;
+",
+      "date_published": "2015-01-16T00:00:00+01:00",
+      "date_modified": "2015-01-16T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www",
+      "url": "https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www",
+      "title": "Give user permission to edit and add files in /var/www",
+      "content_html": "&lt;p&gt;Tutorial showing you how to give an Ubuntu user the right to edit and add files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www&lt;/code&gt; folders.&lt;/p&gt;
 
 &lt;p&gt;Add the www-data group to an existing user&lt;/p&gt;
 
@@ -628,20 +615,20 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo chgrp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; www-data /var/www/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server"/>
-    <title>Use Gitolite to Control Access to a Git Server</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2015-01-09T00:00:00+01:00</published>
-    <updated>2015-01-09T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;Git is a great distributed version control system that can be used to keep track of changes and code for any kind of project. Sometimes, it is helpful to configure a git server to house your team’s projects.&lt;/p&gt;
+",
+      "date_published": "2015-01-10T00:00:00+01:00",
+      "date_modified": "2015-01-10T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server",
+      "url": "https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server",
+      "title": "Use Gitolite to Control Access to a Git Server",
+      "content_html": "&lt;p&gt;Git is a great distributed version control system that can be used to keep track of changes and code for any kind of project. Sometimes, it is helpful to configure a git server to house your team’s projects.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Gitolite&lt;/strong&gt; provides an access-control layer for a git server, so that you can configure user-based git access without the accompanying operating system user accounts. This provides your git contributors the privileges they need, without exposing your server to other kinds of interaction.&lt;/p&gt;
 
@@ -855,20 +842,20 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
 &lt;p&gt;You should now have gitolite configured correctly. You should be able to create git users easily without worrying about configuring accompanying operating system users and permissions every time.&lt;/p&gt;
 
 &lt;p&gt;If you are managing multiple projects with diverse teams, it is probably best to set up groups that correspond to projects. It might also be helpful to organize your &lt;code class=&quot;highlighter-rouge&quot;&gt;keydir&lt;/code&gt; keys into subdirectories based on project. Gitolite will use them the same way, but they will be easier to find for administrative purposes.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/open-hackerspaces-day-2014</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/open-hackerspaces-day-2014"/>
-    <title>March 29th marks this years International open Hackerspaces day</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2014-03-15T00:00:00+01:00</published>
-    <updated>2014-03-15T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.&lt;/p&gt;
+",
+      "date_published": "2015-01-09T00:00:00+01:00",
+      "date_modified": "2015-01-09T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/open-hackerspaces-day-2014",
+      "url": "https://www.groveld.com/articles/open-hackerspaces-day-2014",
+      "title": "March 29th marks this years International open Hackerspaces day",
+      "content_html": "&lt;p&gt;Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.&lt;/p&gt;
 
 &lt;p&gt;Designing 3D printed cookie cutters, making your own soap, milling furniture, from adjusting the colours of your living room lights to match the film you’re watching to checking how secure Whatsapp really is. It’s all possible in a hackerspace.&lt;/p&gt;
 
@@ -900,20 +887,20 @@ RW+     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;       john
   &lt;li&gt;Utrecht: &lt;a href=&quot;http://www.randomdata.nl/&quot;&gt;RandomData&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Wageningen: &lt;a href=&quot;http://nurdspace.nl/&quot;&gt;NURDspace&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages"/>
-    <title>How To Use GPG to Encrypt and Sign Messages</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2014-02-15T00:00:00+01:00</published>
-    <updated>2014-02-15T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.&lt;/p&gt;
+",
+      "date_published": "2014-03-15T00:00:00+01:00",
+      "date_modified": "2014-03-15T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages",
+      "url": "https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages",
+      "title": "How To Use GPG to Encrypt and Sign Messages",
+      "content_html": "&lt;p&gt;GPG, or GNU Privacy Guard, is a public key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.&lt;/p&gt;
 
 &lt;p&gt;In this guide, we will discuss how GPG works and how to implement it. We will be using an Ubuntu 12.04 VPS for this demonstration, but the tools are available on any modern Linux distribution.&lt;/p&gt;
 
@@ -1167,20 +1154,20 @@ sub   4096R/8822A56A 2013-10-04
 &lt;p&gt;Because of the way that certain encrypted communications can be flagged by monitoring programs, it is recommended to use encryption for everything, not just “secret” data. That will make it more difficult for people to know when you are sending important data or just sending a friendly hello.&lt;/p&gt;
 
 &lt;p&gt;GPG encryption is only useful when both parties use good security practices and are vigilant about their other security practices. Educate those who you communicate regularly with about the importance of these practices if you want to have the possibility of cryptographically secure communication.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls"/>
-    <title>Postfix with MySQL backend and TLS</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2014-02-08T00:00:00+01:00</published>
-    <updated>2014-02-08T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAP services.&lt;/p&gt;
+",
+      "date_published": "2014-02-15T00:00:00+01:00",
+      "date_modified": "2014-02-15T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls",
+      "url": "https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls",
+      "title": "Postfix with MySQL backend and TLS",
+      "content_html": "&lt;p&gt;In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAP services.&lt;/p&gt;
 
 &lt;p&gt;Once installed and configured, you can easily create your own admin system to modifiy the domains and users because the table structure is very simple.&lt;/p&gt;
 
@@ -1397,20 +1384,20 @@ postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You’re all done. Now you can connect to ports 25 and 465 to sent mails to your virtual users specified in the MySql database. When authenticating with your e-mail client, use the full e-mail address as the username.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/clean-urls-with-jekyll-apache</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/clean-urls-with-jekyll-apache"/>
-    <title>Clean URLs with Jekyll/Apache</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2014-02-01T00:00:00+01:00</published>
-    <updated>2014-02-01T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes &lt;strong&gt;not&lt;/strong&gt; having a slash at the end of the urls. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;groveld.com/about&lt;/code&gt;.&lt;/p&gt;
+",
+      "date_published": "2014-02-08T00:00:00+01:00",
+      "date_modified": "2014-02-08T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/clean-urls-with-jekyll-apache",
+      "url": "https://www.groveld.com/articles/clean-urls-with-jekyll-apache",
+      "title": "Clean URLs with Jekyll/Apache",
+      "content_html": "&lt;p&gt;Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes &lt;strong&gt;not&lt;/strong&gt; having a slash at the end of the urls. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;groveld.com/about&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;To view options available when setting the permalink structure of posts in jekyll, you can take a look at the &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;documentation&lt;/a&gt;, but for our purpose, it’s so simple and you might have already guessed it without looking at the docs: &lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /:title&lt;/code&gt;&lt;/p&gt;
 
@@ -1439,20 +1426,20 @@ RewriteRule ^([\w\/-]+)(\?.*)?$ $1/index.html$2 [L,T=application/x-httpd-html]
 &lt;p&gt;In this approach, jekyll creates a directory for each post, which in my opinion is not very nice. The solution for that will be to tell jekyll to create all posts as html files in some directory, like &lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt; and then have Apache load the actual file for each post from the &lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt; folder. However, if you try this, you’ll realize that jekyll always creates the paginations in folder structure (&lt;code class=&quot;highlighter-rouge&quot;&gt;/page/2/index.html&lt;/code&gt;) and there’s no easy way to make it create html files (&lt;code class=&quot;highlighter-rouge&quot;&gt;/page/2.html&lt;/code&gt;), and therefore that’ll messup our htaccess url rewrite. Now, if you have a decent knowledge of &lt;a href=&quot;http://regex.learncodethehardway.org/&quot;&gt;regex&lt;/a&gt;, then you’re fine and you can separate blog posts from paginations, but that’s not the case for me :p, so this is as far as I will go.&lt;/p&gt;
 
 &lt;p&gt;I also thought it might be useful to link to &lt;a href=&quot;http://andrewho.co.uk/weblog/clean-urls-on-jekyll-apache&quot;&gt;this article&lt;/a&gt;; although I didn’t use it myself and I only found it after doing what I just described in this post.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <id>https://www.groveld.com/articles/what-it-really-means-to-hack</id>
-    <link rel="alternate" type="text/html" href="https://www.groveld.com/articles/what-it-really-means-to-hack"/>
-    <title>What it really means to Hack</title>
-    <author>
-      <name>groveld</name>
-      <email>martin@groveld.com</email>
-    </author>
-    <published>2014-01-18T00:00:00+01:00</published>
-    <updated>2014-01-18T00:00:00+01:00</updated>
-    <content type="html">&lt;p&gt;I once mentioned it to a classmate that I use GNU/Linux as the only Operating System at home, and he replied in shock, “That’s used by &lt;em&gt;Hackers&lt;/em&gt;? Right?”
+",
+      "date_published": "2014-02-01T00:00:00+01:00",
+      "date_modified": "2014-02-01T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+    {
+      "id": "https://www.groveld.com/articles/what-it-really-means-to-hack",
+      "url": "https://www.groveld.com/articles/what-it-really-means-to-hack",
+      "title": "What it really means to Hack",
+      "content_html": "&lt;p&gt;I once mentioned it to a classmate that I use GNU/Linux as the only Operating System at home, and he replied in shock, “That’s used by &lt;em&gt;Hackers&lt;/em&gt;? Right?”
 That is true. Almost everyone who calls himself/herself a Hacker uses it, but the fear on his face suggested that he meant to say &lt;em&gt;Crackers&lt;/em&gt;.
 Noooo! Linux users aren’t &lt;em&gt;Crackers&lt;/em&gt;. That would be similar to saying that everyone who owns a slide hammer, is a car thief!&lt;/p&gt;
 
@@ -1485,7 +1472,14 @@ Eric Raymond’s &lt;a href=&quot;http://www.catb.org/~esr/faqs/hacker-howto.htm
 and the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hacker_%28programmer_subculture%29&quot;&gt;Wikipedia Article&lt;/a&gt; on Hacker subculture.&lt;/p&gt;
 
 &lt;p&gt;Happy Hacking!&lt;/p&gt;
-</content>
-  </entry>
-  
-</feed>
+",
+      "date_published": "2014-01-18T00:00:00+01:00",
+      "date_modified": "2014-01-18T00:00:00+01:00",
+      "author": {
+        "name": "groveld",
+        "url": "mailto:martin@groveld.com"
+      }
+    },
+    
+  ]
+}
