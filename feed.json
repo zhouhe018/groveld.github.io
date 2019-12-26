@@ -4,8 +4,8 @@
   "home_page_url": "https://www.groveld.com/",
   "feed_url": "https://www.groveld.com/feed.json",
   "description": "The personal website of Martin Groeneveld",
-  "icon": "/img/icons/android-chrome-512x512.png",
-  "favicon": "/favicon.ico",
+  "icon": "https://www.groveld.com/img/icons/android-chrome-512x512.png",
+  "favicon": "https://www.groveld.com/favicon.ico",
   "author": {
     "name": "Martin Groeneveld",
     "url": "mailto:martin@groveld.com"
@@ -23,7 +23,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/htaccess-snippets",
       "url": "https://www.groveld.com/articles/htaccess-snippets",
@@ -36,7 +35,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/www-non-www-redirection",
       "url": "https://www.groveld.com/articles/www-non-www-redirection",
@@ -49,7 +47,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www",
       "url": "https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www",
@@ -62,7 +59,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server",
       "url": "https://www.groveld.com/articles/use-gitolite-to-control-access-to-a-git-server",
@@ -75,7 +71,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/open-hackerspaces-day-2014",
       "url": "https://www.groveld.com/articles/open-hackerspaces-day-2014",
@@ -88,7 +83,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages",
       "url": "https://www.groveld.com/articles/how-to-use-gpg-to-encrypt-and-sign-messages",
@@ -101,7 +95,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls",
       "url": "https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls",
@@ -114,7 +107,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/clean-urls-with-jekyll-apache",
       "url": "https://www.groveld.com/articles/clean-urls-with-jekyll-apache",
@@ -127,7 +119,6 @@
         "url": "mailto:martin@groveld.com"
       }
     },
-  
     {
       "id": "https://www.groveld.com/articles/what-it-really-means-to-hack",
       "url": "https://www.groveld.com/articles/what-it-really-means-to-hack",
