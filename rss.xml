@@ -16,8 +16,7 @@
     
     <item>
       <title>A collection of useful .htaccess snippets</title>
-      <description>Disclaimer: While dropping the snippet into an &quot;.htaccess&quot; file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.
-</description>
+      <description>Disclaimer: While dropping the snippet into an &quot;.htaccess&quot; file is most of the time sufficient, there are cases when certain modifications might be required. Use at your own risk.</description>
       <pubDate>Sun, 06 Sep 2015 00:00:00 +0200</pubDate>
       <link>https://www.groveld.com/articles/htaccess-snippets</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/htaccess-snippets</guid>
@@ -25,8 +24,7 @@
     
     <item>
       <title>Nginx config for www and non-www redirection</title>
-      <description>There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.
-</description>
+      <description>There are many ways to force Nginx to use either WWW version or non-WWW version of URLs for your site.</description>
       <pubDate>Fri, 16 Jan 2015 00:00:00 +0100</pubDate>
       <link>https://www.groveld.com/articles/www-non-www-redirection</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/www-non-www-redirection</guid>
@@ -34,8 +32,7 @@
     
     <item>
       <title>Give user permission to edit and add files in /var/www</title>
-      <description>Tutorial showing you how to give an Ubuntu user the right to edit and add files in the /var/www folders.
-</description>
+      <description>Tutorial showing you how to give an Ubuntu user the right to edit and add files in the /var/www folders.</description>
       <pubDate>Sat, 10 Jan 2015 00:00:00 +0100</pubDate>
       <link>https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/give-user-permission-to-edit-and-add-files-in-var-www</guid>
@@ -51,8 +48,7 @@
     
     <item>
       <title>March 29th marks this years International open Hackerspaces day</title>
-      <description>Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.
-</description>
+      <description>Just like the past three years, the hackerspace community will open their doors to the public, on Saturday the 29th of March 2014.</description>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0100</pubDate>
       <link>https://www.groveld.com/articles/open-hackerspaces-day-2014</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/open-hackerspaces-day-2014</guid>
@@ -68,8 +64,7 @@
     
     <item>
       <title>Postfix with MySQL backend and TLS</title>
-      <description>In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAP services.
-</description>
+      <description>In this tutorial we’ll install a ready to use Postfix mail server with MySql backend for virtual users. Notice that this tutorial only covers installing the SMTP server (not POP3 and IMAP). Click here for a tutorial on installing Courier POP3 and IMAP services.</description>
       <pubDate>Sat, 08 Feb 2014 00:00:00 +0100</pubDate>
       <link>https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/postfix-with-mysql-backend-and-tls</guid>
@@ -77,8 +72,7 @@
     
     <item>
       <title>Clean URLs with Jekyll/Apache</title>
-      <description>Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes not having a slash at the end of the urls. For example, groveld.com/about.
-</description>
+      <description>Yesterday I decided to shorten and clear the urls of my posts once and for all. By clean, I mean short and simple urls without dates, categories or anything else in them, only the post slug. My definition of cleanness also includes not having a slash at the end of the urls. For example, groveld.com/about.</description>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0100</pubDate>
       <link>https://www.groveld.com/articles/clean-urls-with-jekyll-apache</link>
       <guid isPermaLink="true">https://www.groveld.com/articles/clean-urls-with-jekyll-apache</guid>
