@@ -1,7 +1,7 @@
 'use strict';
 
-const cacheVersion = 'fc5d842::';
-const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/feed.json','/','/css/main.fc5d842.css','/js/main.fc5d842.js','/manifest.json','/privacy','/robots.txt','/rss.xml','/sitemap.xml','/css/syntax.fc5d842.css','/terms','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
+const cacheVersion = 'f29158b::';
+const urlsToCache = ['/404','/about','/atom.xml','/browserconfig.xml','/feed.json','/','/css/main.f29158b.css','/js/main.f29158b.js','/manifest.json','/privacy','/robots.txt','/rss.xml','/sitemap.xml','/css/syntax.f29158b.css','/terms','/articles/group-policy-processing','/articles/htaccess-snippets','/articles/www-non-www-redirection','/articles/give-user-permission-to-edit-and-add-files-in-var-www','/articles/use-gitolite-to-control-access-to-a-git-server','/articles/open-hackerspaces-day-2014','/articles/how-to-use-gpg-to-encrypt-and-sign-messages','/articles/postfix-with-mysql-backend-and-tls','/articles/clean-urls-with-jekyll-apache','/articles/what-it-really-means-to-hack','/articles/teamspeak-3-server-on-debian-ubuntu','/articles/ohm2013-observe-hack-make'];
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', function (event) {
